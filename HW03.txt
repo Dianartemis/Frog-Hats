@@ -4,7 +4,7 @@ HW03 -- Codify the Revisions/Binary/Explaining "base", binary's uses, and conver
 2021-09-23
 
 # 0. What does "base" in "base-X number system" mean?
-"Base" is the numbers of values possible to use in any decimal place.
+"Base" is the number of values possible to use in any decimal place.
 For example, base 10 can include the values: 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9 -- which is a total of 10 values.
 
 
@@ -37,4 +37,4 @@ for (int n = i - 1; n >= 0; n++)
 
 Write down the decimal number and divide by 2 continuously.
 Make sure to note the remainder (1 or 0) from top to down until the final quotient is zero.
-Lastly, list out the 1's and 0's bottom-up (backwards) to get the binary conversion.
+Lastly, list out the 1's and 0's bottom-up (backward) to get the binary conversion.
