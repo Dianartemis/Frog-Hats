@@ -1,7 +1,7 @@
 /*
 Diana Akhmedova
 APCS
-HW 09 - What are BigSibs good for?
+HW 09 - What Are BigSibs Good For?
 2021-10-03
 
 DISCOVERIES:
