@@ -7,7 +7,7 @@ HW 10 - Refactor Big Sib One
 DISCOVERIES:
 - I would get an error if I did not include a return statement.
 UNRESOLVED QUESTIONS:
-- Why did HW10 need a return statement in the BigSib method, bit HW09 did not?
+- Why did HW 10 need a return statement in the BigSib method, bit HW 09 did not?
 */
 
 public class BigSib {
