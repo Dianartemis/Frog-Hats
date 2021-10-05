@@ -4,8 +4,10 @@ APCS
 HW 09 - What are BigSibs good for?
 2021-10-03
 
-DISCOVERIES
-UNRESOLVED QUESTIONS
+DISCOVERIES:
+- Public classes can be called from different Java files.
+UNRESOLVED QUESTIONS:
+- N/A
 */
 
 public class BigSib {
