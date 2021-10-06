@@ -11,7 +11,6 @@ QCC:
 - Why does a constructor have to be public?
 */
 
-
 public class BigSib {
   String helloMsg;
   public BigSib(String msg) {
