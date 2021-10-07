@@ -1,5 +1,5 @@
 /*
-Diana Akhmedova (Ajax) + Rin Fk (Tape)
+Diana Akhmedova (Ajax) + Rin Fukuoka (Tape)
 APCS
 HW 13 - Where do BigSibs Come From?
 2021-10-06
