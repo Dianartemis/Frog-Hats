@@ -1,5 +1,5 @@
 /*
-Diana Akhmedova (Ajax) + Rin Fk (Tape)
+Diana Akhmedova (Ajax) + Rin Fukuoka (Tape)
 APCS
 HW 12 - On Elder Individuality and the Elimination of Radio Fuzz
 2021-10-05
