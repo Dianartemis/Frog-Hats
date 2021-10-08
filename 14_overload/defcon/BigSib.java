@@ -2,7 +2,7 @@ public class BigSib {
   String helloMsg;
 
   public BigSib() {
-    helloMsg = "Word up";
+    helloMsg = "Hello";
   }
 
   public String greet(String name) {
