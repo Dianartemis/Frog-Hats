@@ -1,5 +1,5 @@
 /*
-Diana Akhmedova (Ajax) + Rin Fukuoka (Tape)
+Neverland (Diana Akhmedova + Ajax, Rin Fukuoka + Tape, Marcus Wu)
 APCS
 HW 14 - Customize Your Creation
 2021-10-07
