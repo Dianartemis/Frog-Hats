@@ -1,3 +1,15 @@
+/*
+Neverland (Diana Akhmedova + Ajax, Rin Fukuoka + Tape, Marcus Wu)
+APCS
+HW 14 - Customize Your Creation
+2021-10-07
+
+DISCO:
+- Overloaded constructors use parameters, while default parameters do not.
+QCC:
+- N/A
+*/
+
 public class BigSib {
   String helloMsg;
 
