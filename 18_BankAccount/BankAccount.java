@@ -25,11 +25,12 @@ Clueless Cats's Latest and Greatest Q3 Response:
 */
 
 public class BankAccount {
-  private String name;
-  private String password;
-  private int pin;
-  private int accountNum;
-  private float balance;
+  // creating static variables for each attribute
+  private static String name;
+  private static String password;
+  private static int pin;
+  private static int accountNum;
+  private static float balance;
 
   // setting each attribute
   public static void setName(String fullName) {
@@ -53,8 +54,8 @@ public class BankAccount {
   }
 
   // printing out info
-  public static void printinfo (int accNum, String pass){
-    if (account == accountNum && pass = password){
+  public static void printInfo (int accNum, String pass){
+    if (accNum == accountNum && pass == password){
       // if account number + password are correct, print info
       System.out.println(name);
       System.out.println(password);
@@ -68,7 +69,7 @@ public class BankAccount {
     }
   }
 
-  public static void deposit (int accNum, String pass float amtDeposit) {
+  public static void deposit (int accNum, String pass, float amtDeposit) {
     if(accNum == accountNum && pass == password) {
       // if account number + pass are correct, deposit money
       balance = balance + amtDeposit;
@@ -81,15 +82,16 @@ public class BankAccount {
   }
 
   public static void withdraw (int accNum, String pass, float amtWithdraw) {
-    if(accNum == acountNum && pass == password) {
+    if(accNum == accountNum && pass == password) {
       if(balance - amtWithdraw < 0) {
         // does not allow withdrawal when balance will be less than 0
-        System.out,println("You're broke, you can't withdraw money.");
+        System.out.println("You're broke, you can't withdraw money.");
         }
         else {
           // if account number + pass are correct AND money is less than 0, withdraw money
           balance = balance - amtWithdraw;
           System.out.println("Your new balance is now " + balance + ".");
+        }
       }
     else {
       // if not correct, no withdraw
@@ -118,7 +120,7 @@ public class BankAccount {
 
     // withdraw + deposit with wrong information test
     deposit(12345, password, 20);
-    withdraw(123456789, psaswrod, 20);
+    withdraw(12345, password, 20);
 
     // prints updated info
     printInfo(123456789, password);
