@@ -1,19 +1,18 @@
 /**
-   Clyde "Thluffy" Sinclair
-   APCS pd0
-   HW18 -- building a more meaningful class
-   2021-10-18
-   instance variables for storing...
-   account holder's full name
-   account password
-   4-digit PIN
-   9-digit account number
-   account balance
-   and methods for...
-   setting each attribute
-   printing out all of an account’s info at once
-   depositing money
-   withdrawing money
+Clueless Cats: Vansh Saboo + Tiffany, Lauren Lee + Bo, Diana Akhmedova + Ajax
+APCS
+HW 19: Mo Money Mo Problems ...MORE AWESOME
+2021-10-18
+
+DISCO:
+- To return true or flase, you must change the return type to boolean.
+- You don't need to write an if statement to return a boolean value. Simply returning (xyz) will return true or false depending if it is false or not.
+- Don't initialize variables in the if statement if you want it to apply to the else statement too.
+
+QCC:
+- Why use constructors instead of regular methods?
+- What is the use of static in the heading?
+- Why do we need to put (short) in front of the setPin parameter when our pin was within the range of a short?
 **/
 
 public class BankAccount {
@@ -42,13 +41,25 @@ public class BankAccount {
 
   public short setPin( short newPin ) {
     short oldPin = pin;
-    pin = newPin;
+    if( newPin >= 1000 && newPin <= 9998 ) {
+      pin = newPin;
+    }
+    else {
+      pin = 9999;
+      System.out.println("Try again.");
+    }
     return oldPin;
   }
 
   public int setAcctNum( int newAcctNum ) {
-    int oldAcctNum = acctNum;
-    acctNum = newAcctNum;
+    int oldAcctNum = acctNum; //must be outside of the if statement
+    if( newAcctNum >= 100000000 && newAcctNum <= 999999998 ) {
+      acctNum = newAcctNum;
+    }
+    else {
+      acctNum = 999999999;
+      System.out.println("Try again.");
+    }
     return oldAcctNum;
   }
 
@@ -64,8 +75,26 @@ public class BankAccount {
     balance = balance + depositAmount;
   }
 
-  public void withdraw( double withdrawAmount ) {
-    balance = balance - withdrawAmount;
+  public Boolean withdraw( double withdrawAmount ) {
+    if( balance - withdrawAmount < 0 ) {
+      System.out.println("Error.");
+      return false;
+    }
+    else {
+      balance = balance - withdrawAmount;
+      return true;
+    }
+  }
+
+
+  public Boolean authenticate (int inputAcctNum, String inputPassword) {
+    if( acctNum == inputAcctNum && inputPassword == passwd ) {
+      return true;
+    }
+    else {
+      return false;
+    }
+    //will return true if true and false if false
   }
 
 
@@ -84,7 +113,7 @@ public class BankAccount {
 
   //main method for testing
   public static void main( String[] args ) {
-    // INSERT YOUR METHOD CALLS FOR TESTING HERE
+    // should produce a list of all the information
     BankAccount ba = new BankAccount();
     ba.setName("John");
     ba.setPasswd("password");
@@ -93,8 +122,19 @@ public class BankAccount {
     ba.setBalance(0.00);
     ba.deposit(50.00);
     ba.withdraw(10.00);
-	//balance should be 40
+      //balance should be 40
     System.out.println(ba.toString());
+
+    //should produce errors when setPin, setAcctNum, authenticate, and withdraw are invoked
+    BankAccount error = new BankAccount();
+    error.setName("Error");
+    error.setPasswd("pass");
+    System.out.println(error.setPin((short) 12));
+    System.out.println(error.setAcctNum(123));
+    error.setBalance(0);
+    System.out.println(error.withdraw(10));
+    System.out.println(error.toString());
+    System.out.println(error.authenticate(123, "pass"));
   }//end main()
 
 }//end class BankAccount
