@@ -45,14 +45,14 @@ public class Coin{
   }
 
 
-  private double assignValue(String s){
-    if (name.equals("penny")){
+  private double assignValue(String s) {
+    if (name.equals("penny")) {
       value = 0.01;
-    } else if (name.equals("nickel")){
+    } else if (name.equals("nickel")) {
     value = 0.05;
-    } else if (name.equals("dime")){
+    } else if (name.equals("dime")) {
     value = 0.1;
-    } else if (name.equals("quarter")){
+    } else if (name.equals("quarter")) {
     value = 0.25;
     } else if (name.equals("half dollar")) {
     value = 0.5;
@@ -74,32 +74,25 @@ public class Coin{
 
   public String flip() {
     flipCtr += 1;
-   /* Random rand = new Random();
-    int num = rand.nextInt(10);
-    double test = 0.1 * num;
-   */
 
     double test = Math.random();
-
-     if (test < bias) {
-        upFace = "heads";
-        headsCtr += 1;
-      }
-      else {
-        upFace = "tails";
-        tailsCtr += 1;
-      }
+    if (test < bias) {
+      upFace = "heads";
+      headsCtr += 1;
+    }
+    else {
+      upFace = "tails";
+      tailsCtr += 1;
     }
     return upFace;
   }
 
   public boolean equals(Coin other) {
     return upFace.equals(other.upFace);
-    
   }
 
   public String toString() {
-    String output = name + " -- " + upFace;
+    String output = " " + name + " -- " + upFace;
     return output;
   }
 
