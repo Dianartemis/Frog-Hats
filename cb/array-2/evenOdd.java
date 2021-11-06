@@ -1,12 +1,12 @@
 public class evenOdd {
 
   public static void main( String[] args ) {
-    System.out.println(evenOdd([1, 0, 1, 0, 0, 1, 1]));
-    System.out.println(evenOdd([3, 3, 2]));
-    System.out.println(evenOdd([2, 2, 2]));
+    System.out.println(arrToString(evenOdd(new int[] {1, 0, 1, 0, 0, 1, 1})));
+    System.out.println(arrToString(evenOdd(new int[] {3, 3, 2})));
+    System.out.println(arrToString(evenOdd(new int[] {2, 2, 2})));
   }
 
-  public int[] evenOdd(int[] nums) {
+  public static int[] evenOdd(int[] nums) {
     // initialize new array
     int[] newNum = new int[nums.length];
 
@@ -28,4 +28,16 @@ public class evenOdd {
     // return new array
     return newNum;
   }
+
+  public static String arrToString(int[] ary) {
+    String ans = "[";
+    for (int i = 0; i < ary.length; i++) {
+      ans += ary[i];
+      if (i != ary.length - 1) {
+        ans += ", ";
+      }
+    }
+    return ans + "]";
+  }
+
 }
