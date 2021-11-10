@@ -1,3 +1,24 @@
+/**
+Ellowyay Unflowersay Arlkesspay (Yellow Sunflower Sparkles)
+Diana Akhmedova + Ajax, Lauren Lee + Bo, Emily Ortiz + Applesauce
+APCS
+L00: Etterbay Odingcay Oughthray Ollaborationcay
+2021-11-08
+Time Spent: 0.5 hours
+
+DISCO:
+- Use .equals when dealing with non-primitive data types (ex: String).
+- Use == when dealing with primitive data types (ex: int).
+
+QCC:
+- How can we implement checks for capitalization, punctuation, and spaces?
+
+NEW IN V1:
+- Added second skeleton with helper methods from the closet.
+- Added a checker for "y", treating "y" as a consonant if it is the first letter in the String, and treating "y" as a vowel if it is not the first letter in the String.
+**/
+
+
 public class Pig {
 
     private static final String VOWELS = "aeiouy";

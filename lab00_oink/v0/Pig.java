@@ -1,3 +1,21 @@
+/**
+Ellowyay Unflowersay Arlkesspay (Yellow Sunflower Sparkles)
+Diana Akhmedova + Ajax, Lauren Lee + Bo, Emily Ortiz + Applesauce
+APCS
+L00: Etterbay Odingcay Oughthray Ollaborationcay
+2021-11-08
+Time Spent: 0.5 hours
+
+DISCO:
+- static final is a constant/final version that cannot be chanfed, modified, or overwritten.
+
+QCC:
+- How can we implement a check for "y", making it a consonant if it is the first letter of the String, and making it a vowel otherwise?
+
+NEW IN V0:
+- Added first skeleton from the closet.
+**/
+
 public class Pig {
 
   private static final String VOWELS = "aeiouAEIOU";
