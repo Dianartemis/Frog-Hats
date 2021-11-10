@@ -7,7 +7,7 @@ L00: Etterbay Odingcay Oughthray Ollaborationcay
 Time Spent: 4.5 hours
 
 DISCO:
-- hasNext() checks if the scanner has another token in its input.
+- hasNext() checks if the Scanner has another token in its input.
 - scanner.next finds and returns the next complete token.
 
 QCC:
