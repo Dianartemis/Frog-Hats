@@ -14,7 +14,7 @@ QCC:
 * Is it possible to do the methods with two parameters?
 **/
 
-import java.util.Random;
+// import java.util.Random;
 
 public class Loopier {
 
