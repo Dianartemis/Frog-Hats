@@ -1,11 +1,16 @@
 /*****************************************************
- * Clyde "Thluffy" Sinclair
- * APCS pd00
- * HW38 -- Shmoney
- * 2021-11-18
+ * Team Orange Marshmellows: Nina Jiang, Diana Akhmedova, Julia Kozak // Duckies: Miss Alpaca, Ajax, Flopsy
+ * APCS pd08
+ * HW38 -- Spin Class
+ * 2021-11-17
+ * Time Spent: 0.5 hours
  *
- * class Slots
- * skeleton
+ * DISCO:
+ *  - "\t" inserts a tab (similar to "\n" inserting a new line).
+ *  - You can allocate memory to an array after it has been initialized.
+ *
+ * QCC:
+ *  - In spinOnce(), is there a different way to randomly shuffle the fruits?
  *****************************************************/
 
 public class Slots {
@@ -38,13 +43,11 @@ public class Slots {
   public Slots()
   {
     //allocate memory for _fruits based on size of FRUITS:
-    String[] output = new String[15];
-    for(int i = 0; i < output.length; i++) {
-      output[i] = FRUITS[i];
+    _fruits = new String[15];
+    for(int i = 0; i < _fruits.length; i++) {
+      _fruits[i] = FRUITS[i];
     }
-
     //copy elements of FRUITS into _fruits:
-
   }
 
 
@@ -53,13 +56,13 @@ public class Slots {
     pre:
     post: returns String of elements in slots 0 thru 2, separated by tabs
     =====================================*/
-  public String toString(int[] ary)
+  public String toString()
   {
-    String ans = "Your spin...     ";
+    String ans = "";
     for(int i = 0; i < 3; i++) {
-      ans += ary[i];
+      ans += _fruits[i] + "\t";
     }
-    return ans + "      ";
+    return ans;
   }
 
 
@@ -70,9 +73,9 @@ public class Slots {
     =====================================*/
   private void swap( int i, int j )
   {
-    int oldJ = _fruits[j];
-    _fruits[i] = _fruits[j];
-    _fruits[j] = oldJ;
+    String oldJ = _fruits[j];
+    _fruits[j] = _fruits[i];
+    _fruits[i] = oldJ;
   }
 
 
@@ -86,8 +89,9 @@ public class Slots {
     // A simple approach to shuffling:
     // iterate through the array, swapping
     // the val at each index with a randomly chosen other index
-    for(int i = 0; i < _fruits.length; i++)
-      swap(  );
+    for(int i = 0; i < _fruits.length - 1; i++) {
+      swap(i, (int)(Math.random() * _fruits.length));
+    }
   }
 
 
@@ -100,8 +104,9 @@ public class Slots {
   public boolean jackpot()
   {
     boolean retBoo = false;
-
-
+    if(_fruits[0].equals(_fruits[1]) && _fruits[1].equals(_fruits[2])) {
+      retBoo = true;
+    }
     return retBoo;
   }
 
@@ -115,9 +120,14 @@ public class Slots {
     =====================================*/
   public boolean miniWin()
   {
-    boolean retBoo = ?
-
-
+    boolean retBoo = false;
+    boolean distinct = false;
+    if(!(_fruits[0].equals(_fruits[1])) && !(_fruits[1].equals(_fruits[2])) && !(_fruits[0].equals(_fruits[2]))) {
+      distinct = true;
+    }
+    if(distinct || jackpot()) {
+      retBoo = true;
+    }
     return retBoo;
   }
 
@@ -126,7 +136,7 @@ public class Slots {
   public static void main( String[] args ) {
     //usage: move bar below down 1 line at a time to test functionality...
 
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     Slots machine01 = new Slots();
     Slots machine02 = new Slots();
     //test to verify slot machines function indepently
@@ -162,7 +172,7 @@ public class Slots {
     System.out.println( "====================================" );
     System.out.println( "Your spin..." + "\t" + machine01 );
     System.out.println( "JACKPOT!\n" );
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   }//end main
 
 }//end class Slots
