@@ -1,3 +1,9 @@
+Diana Akhmedova // Ducky: Ajax
+APCS
+HW36: All Quacked Up
+2021-11-18
+Time Spent: 0.5 hours
+
 Types of Errors:
 - Compile-time errors indicate that there is something wrong with the syntax of the program.
     - Example: omitting the semicolon at the end of a statement.
