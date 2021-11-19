@@ -2,8 +2,8 @@
 Team Orange Marshmellows: Nina Jiang, Diana Akhmedova, Julia Kozak // Duckies: Miss Alpaca, Ajax, Flopsy
 APCS
 HW34: A Pirate's Life for Me
-2021-11-13
-Time Spent: 2.2 hours
+2021-11-15
+Time Spent: 0.1 hours
 
 DISCO:
 * Using counter ++ in a recursion function causes the method to keep running without stop.
@@ -13,8 +13,6 @@ DISCO:
 QCC:
 * Is it possible to do the methods with two parameters?
 **/
-
-import java.util.Random;
 
 public class Loopier {
 
