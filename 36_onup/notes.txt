@@ -5,12 +5,12 @@ HW36: All Quacked Up
 Time Spent: 0.5 hours
 
 Types of Errors:
-- Compile-time errors indicate that there is something wrong with the syntax of the program.
-    - Example: omitting the semicolon at the end of a statement.
-- Run-time errors are produced if something goes wrong while the program is running.
-    - Example: an infinite recursion eventually causes a StackOverflowError.
-- Logic errors cause the program to do the wrong thing.
-    - Example: an expression may not be evaluated in the order you expect.
+- Compile-Time Errors: Indicate there is something wrong with the syntax of the program.
+    - Example: Omitting the semicolon at the end of a statement.
+- Run-Time Errors: Produced if something goes wrong while the program is running.
+    - Example: An infinite recursion eventually causes a StackOverflowError.
+- Logic Errors: Cause the program to do the wrong thing.
+    - Example: An expression may not be evaluated in the order you expect.
 
 
 Compile-Time Errors:
