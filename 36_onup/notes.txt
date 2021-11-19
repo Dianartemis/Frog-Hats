@@ -6,11 +6,11 @@ Time Spent: 0.5 hours
 
 Types of Errors:
 - Compile-Time Errors: Indicate there is something wrong with the syntax of the program.
-    - Example: Omitting the semicolon at the end of a statement.
+    - Ex: Omitting the semicolon at the end of a statement.
 - Run-Time Errors: Produced if something goes wrong while the program is running.
-    - Example: An infinite recursion eventually causes a StackOverflowError.
+    - Ex: An infinite recursion eventually causes a StackOverflowError.
 - Logic Errors: Cause the program to do the wrong thing.
-    - Example: An expression may not be evaluated in the order you expect.
+    - Ex: An expression may not be evaluated in the order you expect.
 
 
 Compile-Time Errors:
@@ -53,7 +53,7 @@ Logic Errors:
 - Break the program into components (classes + methods) and test them independently.
     - Integer division always rounds toward zero. Use double for fractions.
     - Floating-point numbers are only approximate, not perfectly accurate. Never use the == operator with doubles. Instead of (d == 1.23), do if (Math.abs(d - 1.23) < .000001).
-    - Equality operator (==) checks whether objects are identical, equals methods checks for equivalence.
+    - Equality operator (==) checks whether objects are identical, equals method checks for equivalence.
     - Equals checks identity, override it to check for other equivalence.
     - Inheritence can lead to logic errors.
     
