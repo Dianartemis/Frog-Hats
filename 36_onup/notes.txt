@@ -17,7 +17,7 @@ Compile-Time Errors:
 - The key is to start with a working program and add small amounts of code at a time.
 - Look for common syntax errors:
     1. Check all parentheses + brackets.
-    2. Uppercase vs. Lowercase.
+    2. Uppercase vs. lowercase.
     3. Check for semicolons.
     4. Check quotations ("" for String, '' for char).
     5. Type on the left is the same as the type on the right. Expression on the left is a variable name/assignment of value.
