@@ -136,6 +136,9 @@ public class SuperArray implements ListInt
       SuperArray curtis = new SuperArray();
       System.out.println( "Printing empty SuperArray curtis..." );
       System.out.println( curtis );
+      
+      System.out.println("Printing SuperArray curtis size...");
+      System.out.println(curtis.size());
 
       for( int i = 0; i < curtis._data.length; i++ ) {
       curtis.set( i, i * 2 );
@@ -143,6 +146,9 @@ public class SuperArray implements ListInt
 
       System.out.println("Printing populated SuperArray curtis...");
       System.out.println(curtis);
+      
+      System.out.println("Printing SuperArray curtis size...");
+      System.out.println(curtis.size());
 
       for( int i = 0; i < 3; i++ ) {
       curtis.expand();
@@ -155,6 +161,9 @@ public class SuperArray implements ListInt
       SuperArray mayfield = new SuperArray();
       System.out.println("Printing empty SuperArray mayfield...");
       System.out.println(mayfield);
+      
+      System.out.println("Printing SuperArray mayfield size...");
+      System.out.println(mayfield.size());
 
       mayfield.add(5);
       mayfield.add(4);
@@ -164,6 +173,9 @@ public class SuperArray implements ListInt
 
       System.out.println("Printing populated SuperArray mayfield...");
       System.out.println(mayfield);
+      
+      System.out.println("Printing SuperArray mayfield size...");
+      System.out.println(mayfield.size());
 
       mayfield.remove(3);
       System.out.println("Printing SuperArray mayfield post-remove...");
@@ -171,6 +183,9 @@ public class SuperArray implements ListInt
       mayfield.remove(3);
       System.out.println("Printing SuperArray mayfield post-remove...");
       System.out.println(mayfield);
+      
+      System.out.println("Printing SuperArray mayfield size...");
+      System.out.println(mayfield.size());
 
       mayfield.add(3,99);
       System.out.println("Printing SuperArray mayfield post-insert...");
@@ -181,6 +196,10 @@ public class SuperArray implements ListInt
       mayfield.add(1,77);
       System.out.println("Printing SuperArray mayfield post-insert...");
       System.out.println(mayfield);
+      
+      System.out.println("Printing SuperArray mayfield size...");
+      System.out.println(mayfield.size());
+      
 
   }//end main()
 
