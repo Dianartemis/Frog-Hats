@@ -1,12 +1,13 @@
-// Team Orange Marshmallows: Julia Kozak, Diana Akhmedova, Nina Jiang (Duckies Flopsy, Ajax, Miss Alpaca)
-// APCS1 pd08
-// HW44 -- expanding SuperArray functionality, encapsulation
-// 2021-12-08
+// Team Orange Marshmallows: Julia Kozak, Diana Akhmedova, Nina Jiang // Duckies: Flopsy, Ajax, Miss Alpaca
+// APCS pd08
+// HW44 -- Array of Grade 316
+// 2021-12-07
 
 /**
 DISCO:
 - It is fine to have a statement <array0> = <array1>, as long as you know "array0" will now reference array1.
 - _size is used to track the number of meaningful elements.
+
 QCC:
 - If we wanted to add an element at an index not in the range of size (ex. _size=4 and we want to use add(7, 2)), what would be the functionality for that (does _size increase by 4)?
 **/
