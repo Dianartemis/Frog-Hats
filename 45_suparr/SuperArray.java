@@ -5,10 +5,13 @@
 
 /**
 DISCO:
-- 
+- The methods in the interface should have no body, meaning they are abstract.
+- Interfaces are abstract types (they have no body) that lay out protocol for classes to follow.
+- You can't instantiate an interface or add any constructors.
+- You can implement as many Interfaces as required, but you can only extend one class in a class.
 
 QCC:
-- 
+- Does the methods in the interface have to be public, or can they be private/protected? Would it still work?
 **/
 
 /***************************
