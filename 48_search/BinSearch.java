@@ -3,6 +3,8 @@
    Binary search on array of Comparables
 **/
 
+@SuppressWarnings("unchecked")
+
 public class BinSearch
 {
 
@@ -32,10 +34,14 @@ public class BinSearch
     
     if(a[m] == target) {
     	tPos = m;
-    	break;
     }
     else if(hi < a[m]) {
     	lo = hi + 1;
+    	//binSearchRec();
+    }
+    else {
+    	hi = lo - 1;
+    	//binSearchRec();
     }
 
     return tPos;
@@ -50,16 +56,26 @@ public class BinSearch
     int tPos = -1; //init return var to flag value -1
     int m = (lo + hi) / 2; //init mid pos var
 
-    while( /* ? */ ) { // run until lo & hi cross
+    while( lo != hi ) { // run until lo & hi cross
 
       //update mid pos var
-
+      
       // target found
-
+      if(a[m] == target) {
+    	tPos = m;
+    	break;
+      }
+      
       // value at mid index higher than target
-
+      else if(hi < a[m]) {
+    	lo = hi + 1;
+      }
+      
       // value at mid index lower than target
-
+      else {
+    	hi = lo - 1;
+      }
+      
     }
     return tPos;
   }//end binSearchIter
