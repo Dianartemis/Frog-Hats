@@ -1,4 +1,17 @@
 /**
+Team Orange Marshmellows: Julia Kozak, Nina Jiang, Diana Akhmedova // Duckies: Flopsy, Miss Alpaca, Ajax
+APCS pd08
+HW48 -- 
+2021-12-15
+Time Spent: 0.5 hrs
+
+DISCO:
+- 
+QCC:
+- 
+**/
+
+/**
    class BinSearch
    Binary search on array of Comparables
 **/
@@ -31,17 +44,17 @@ public class BinSearch
     int tPos = -1; //init return var to flag value -1
 
     int m = (lo + hi) / 2; //init mid pos var
-    
-    if(a[m] == target) {
+
+    if(a[m].equals(target)) {
     	tPos = m;
     }
-    else if(hi < a[m]) {
-    	lo = hi + 1;
-    	//binSearchRec();
+    else if(a[m].compareTo(target) < 0) {
+    	lo = m + 1;
+    	return binSearchRec(a, target, lo, hi);
     }
     else {
-    	hi = lo - 1;
-    	//binSearchRec();
+    	hi = m - 1;
+    	return binSearchRec(a, target, lo, hi);
     }
 
     return tPos;
@@ -59,23 +72,25 @@ public class BinSearch
     while( lo != hi ) { // run until lo & hi cross
 
       //update mid pos var
-      
+
       // target found
-      if(a[m] == target) {
+      if(a[m].equals(target)) {
     	tPos = m;
     	break;
       }
-      
+
       // value at mid index higher than target
-      else if(hi < a[m]) {
-    	lo = hi + 1;
+      else if(a[m].compareTo(target) < 0) {
+    	lo = m + 1;
+        m = (lo + hi) / 2;
       }
-      
+
       // value at mid index lower than target
       else {
-    	hi = lo - 1;
+    	hi = m - 1;
+        m = (lo + hi) / 2;
       }
-      
+
     }
     return tPos;
   }//end binSearchIter
@@ -100,7 +115,7 @@ public class BinSearch
 
   // utility/helper fxn to display contents of an array of Objects
   private static void printArray( Comparable[] arr ) {
-    String output = "[ "; 
+    String output = "[ ";
 
     for( Comparable c : arr )
 	    output += c + ", ";
@@ -117,9 +132,6 @@ public class BinSearch
   public static void main ( String[] args )
   {
 
-    /*----------------------------------------------------
-
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     System.out.println("\nNow testing binSearch on Comparable array...");
 
     //Declare and initialize array of Comparables
@@ -139,7 +151,7 @@ public class BinSearch
     printArray( iArr3 );
     System.out.println( "iArr3 sorted? -- " + isSorted(iArr2) );
 
-    //search for 6 in array 
+    //search for 6 in array
     System.out.println( binSearch(iArr2,2) );
     System.out.println( binSearch(iArr2,4) );
     System.out.println( binSearch(iArr2,6) );
@@ -147,7 +159,7 @@ public class BinSearch
     System.out.println( binSearch(iArr2,13) );
     System.out.println( binSearch(iArr2,42) );
 
-    //search for 43 in array 
+    //search for 43 in array
     System.out.println( binSearch(iArr2,43) );
 
     System.out.println( "now testing binSearch on iArr3..." );
@@ -155,12 +167,8 @@ public class BinSearch
     System.out.println( binSearch(iArr3,8) );
     System.out.println( binSearch(iArr3,5) );
 
-    //search for 43 in array 
+    //search for 43 in array
     System.out.println( binSearch(iArr3,43) );
-    ====================================================*/
-
-
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   }//end main()
 
