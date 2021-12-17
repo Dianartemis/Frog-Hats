@@ -1,14 +1,20 @@
 /**
 Team Orange Marshmellows: Julia Kozak, Nina Jiang, Diana Akhmedova // Duckies: Flopsy, Miss Alpaca, Ajax
 APCS pd08
-HW48 -- 
+HW48 -- Halving the Halves
 2021-12-15
 Time Spent: 0.5 hrs
 
 DISCO:
-- 
+- Comparable method compareTo() will return positive when the calling instance is greater, negative for less than, and 0 for equal.
+- Comparables can't be typecasted with int.
+- Comparables can't be compared to one another with the typical comparing operands, compareTo() needs to be used instead.
+
 QCC:
-- 
+- What does @SupressWarnings("unchecked") do?
+- Why does the following warning below appear if SupressWarnings is not added?
+	Note: BinSearch.java uses unchecked or unsafe operations.
+	Note: Recompile with -Xlint:unchecked for details.
 **/
 
 /**
@@ -22,7 +28,7 @@ public class BinSearch
 {
 
   /**
-     int binSearch(Comparable[],Comparable) -- searches an array of 
+     int binSearch(Comparable[],Comparable) -- searches an array of
      Comparables for target Comparable
      pre:  input array is sorted in ascending order
      post: returns index of target, or returns -1 if target not found
