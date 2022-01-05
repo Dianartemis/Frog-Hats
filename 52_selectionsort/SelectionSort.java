@@ -1,26 +1,33 @@
-
-// Clyde "Thluffy" Sinclair
-// APCS pd0
+// Crabby Chips: Lauren Lee and Diana Akhmedova
+// APCS pd8
 // HW52 -- implementing selection sort
 // 2022-01-05w
-// time spent:  hrs
+// time spent: 1.0 hrs
 
 /******************************
- *   class SelectionSort -- implements SelectionSort algorithm
+ * class SelectionSort -- implements SelectionSort algorithm
  *
  * ALGO:
+ * 1. select the largest element at move it to the right end
+ * 2. select the next smallest and move it to the next to right end
+ * 3. repeat step 2
  *
- * DISCO
+ * DISCO:
+ * - selectionSortV should change the input array but when it was printed as coco in the main method, it printed the unsorted version. Why is that?
+ * - technically we need size()-1 passes but in coding, we know that the last element is in its right place when the second to last element is in its place so we don't necessarily need the last pass
  *
- * QCC
+ * QCC:
  * q0: How many passes to sort n elements?
- * a0:
+ * a0: n-1 or n-2
+ *
  * q1: What do you know after pass p?
- * a1:
+ * a1: the last p elements are in their right place
+ *
  * q2: How do you know if sorted?
- * a2:
+ * a2: n-1 passes were performed
+ *
  * q3: What does a pass boil down to?
- * a3:
+ * a3: pass ends up as the pass largest element is placed in its right place
  ******************************/
 
 
@@ -69,30 +76,26 @@ public class SelectionSort
     //maxPos will point to position of SELECTION (greatest value)
     int maxPos;
 
-    for(int pass = data.size()-1; pass > 0; pass--) {
-      System.out.println( "\nbegin pass " + (data.size()-pass) );//diag
+    for(int pass = data.size()-2; pass > 0; pass--) {
+      System.out.println( "\nbegin pass " + (data.size()-pass-1) );//diag
+      maxPos = 0;
 
-
-      for( int x = 0; x < data.size(); x++ ) {
-	maxPos = x;
+      for( int i = 0; i < pass+1; i++ ) {
+        if (data.get(i).compareTo(data.get(maxPos)) > 0) {
+          maxPos = i;
+        }
         System.out.println( "maxPos: " + maxPos );//diag
         System.out.println( data );//diag
-
-        for(int i = x; i < data.size(); i++) {
-          if (data.get(i).compareTo(data.get(maxPos)) < 0) {
-            maxPos = i;
-          }
-        }
-	Comparable j = data.get(x);
-	data.set(x, data.get(maxPos));
-	data.set(maxPos, j);
       }
+      data.add(pass+2,data.get(maxPos));
+      data.remove(maxPos);
       System.out.println( "after swap: " +  data );//diag
     }
   }//end selectionSort
 
 
   // ArrayList-returning selectionSort
+
   // postcondition: order of input ArrayList's elements unchanged
   //                Returns sorted copy of input ArrayList.
   public static ArrayList<Comparable> selectionSort( ArrayList<Comparable> input )
