@@ -83,7 +83,7 @@ public class OrderedArrayList
 
   /**
   Best Case Scenario: newVal is the smallest value in the ArrayList, O(1).
-  Worst Case Scenario: There is not enough space in the ArrayList or the element is at the end of the ArrayList, O(n)
+  Worst Case Scenario: There is not enough space in the ArrayList or the element is at the end of the ArrayList, O(n).
   **/
   public void addLinear(Integer newVal)
   {
@@ -105,7 +105,7 @@ public class OrderedArrayList
 
   /**
   Best Case Scenario: newVal is the middle element in the ArrayList, O(1).
-  Worst Case Scenario: newVal is the smallest or largest element in the ArrayList, O(log2n).
+  Worst Case Scenario: newVal is the smallest or largest element in the ArrayList, O(log2(n)).
   **/
   public void addBinary(Integer newVal)
   {
