@@ -45,12 +45,12 @@ public class OrderedArrayList
      return ans;
   }
 
+
   /**
   Best Case Scenario: i is the last element in the Arraylist.
   Worst Case Scenario: i is not in the ArrayList.
   Classification: O(1)
   **/
-
   public Integer remove( int i )
   {
     int temp = _data.get(i);
@@ -64,7 +64,6 @@ public class OrderedArrayList
   Worst Case Scenario: The size is extremely large.
   Classification: O(n)
   **/
-
   public int size()
   {
     return _data.size();
@@ -76,7 +75,6 @@ public class OrderedArrayList
   Worst Case Scenario: i is not in the ArrayList.
   Classification: O(1)
   **/
-
   public Integer get( int i )
   {
     return _data.get(i);
@@ -87,7 +85,6 @@ public class OrderedArrayList
   Best Case Scenario: newVal is the smallest value in the ArrayList, O(1).
   Worst Case Scenario: There is not enough space in the ArrayList or the element is at the end of the ArrayList, O(n)
   **/
-
   public void addLinear(Integer newVal)
   {
     if (_data.size() < 1) {
@@ -110,7 +107,6 @@ public class OrderedArrayList
   Best Case Scenario: newVal is the middle element in the ArrayList, O(1).
   Worst Case Scenario: newVal is the smallest or largest element in the ArrayList, O(log2n).
   **/
-
   public void addBinary(Integer newVal)
   {
   int min = 0;
