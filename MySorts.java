@@ -1,4 +1,4 @@
-// Crabby Chips: Lauren lee and Diana Akhmedova
+// Crabby Chips: Lauren Lee and Diana Akhmedova
 // APCS pd8
 // HW54: One File to Bring Them All...
 // 2022-01-12
