@@ -1,4 +1,12 @@
 /**
+Crabby Chips: Lauren Lee and Diana Akhmedova
+APCS pd8
+HW56: Turing Training Wheels
+2022-01-12
+Time Spent: 1.0 hrs
+**/
+
+/**
  * A program to carry on conversations with a human user.
  * This is the initial version that:
  * <ul><li>
