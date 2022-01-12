@@ -181,7 +181,7 @@ public class MySorts {
       System.out.println("\u001b[32m");
       System.out.println("Testing Insertion Sort...");
       System.out.println("\u001b[0m");
-      System.out.println("\n*** Testing sort-in-place (void) version... *** ");
+      System.out.println("*** Testing sort-in-place (void) version... *** ");
       ArrayList glen3 = new ArrayList<Integer>();
       glen3.add(7);
       glen3.add(1);
