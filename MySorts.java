@@ -175,7 +175,6 @@ public class MySorts {
       System.out.println( "ArrayList coco2 after sorting:\n" + coco2 );
       System.out.println();
       System.out.println();
-      System.out.println();
     //============================================
 
     //===============for VOID methods=============
