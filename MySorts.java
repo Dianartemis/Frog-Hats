@@ -69,7 +69,7 @@ public class MySorts {
 
   // ALGO for SelectionSort
   // 1. Select the largest element at move it to the right end.
-  // 2. Select the next smallest and move it to the next to right end.
+  // 2. Select the next largest and move it to the next to right end.
   // 3. Repeat step 2.
   public static void selectionSortV( ArrayList<Comparable> data )
   {
@@ -101,7 +101,7 @@ public class MySorts {
   // postcondition: data's elements sorted in ascending order
 
   // ALGO for InsertionSort
-  // 1. Start with the sorted partiion osize of one.
+  // 1. Start with the sorted partition of size of one.
   // 2. Insert the one value at a time into the sorted region, swapping with the value's adjacent element when necessary.
   // 3. Repeat until sorted.
   public static void insertionSortV( ArrayList<Comparable> data )
