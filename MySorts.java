@@ -68,8 +68,8 @@ public class MySorts {
   // postcondition: data's elements sorted in ascending order
 
   // ALGO for SelectionSort
-  // 1. Select the largest element at move it to the right end.
-  // 2. Select the next largest and move it to the next to right end.
+  // 1. Select the largest element and move it to the right end.
+  // 2. Select the next largest and move it to the next-to right end.
   // 3. Repeat step 2.
   public static void selectionSortV( ArrayList<Comparable> data )
   {
