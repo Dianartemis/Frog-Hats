@@ -1,4 +1,4 @@
-// Crabby Chips: Lauren lee and Diana Akhmedova
+// Crabby Chips: Lauren Lee and Diana Akhmedova
 // APCS pd8
 // HW55: Never Fear, Big Oh Is Here!
 // 2022-01-12
