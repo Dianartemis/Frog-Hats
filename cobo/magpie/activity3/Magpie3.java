@@ -16,6 +16,29 @@ Time Spent: 1.0 hrs
  * @author Laurie White
  * @version April 2012
  */
+
+/*
+ Tracing Calls:
+ findKeyword("She's my sister", "sister", 0);
+ Iteration			psn			before			after
+ 1							9				" " 				""?
+
+ findKeyword("Brother Tom is helpful", "brother", 0);
+ Iteration			psn			before			after
+ 1							0				"" 					" "
+
+ findKeyword("I can't catch wild cats.", "cat", 0);
+ Iteration			psn			before			after
+ 1							8				" " 				"c"
+ 2							19      " "         "s"
+
+ findKeyword("I know nothing about snow plows.", "no", 0);
+ Iteration			psn			before			after
+ 1							3				"k" 				"k"
+ 2              7				" "         "t"
+ 3 							22			"s" 				"w"
+*/
+
 public class Magpie3
 {
 	/**
@@ -74,7 +97,7 @@ public class Magpie3
 		{
 			response = "I love it too!";
 		}
-		else if (findKeyword(statement, statement.trim().length()) <= 0)
+		else if (statement.trim().length()) <= 0)
 		{
 			response = "Say something, please.";
 		}
@@ -175,7 +198,7 @@ public class Magpie3
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -196,7 +219,13 @@ public class Magpie3
 		{
 			response = "You don't say.";
 		}
-
+		else if (whichResponse == 4)
+		{
+			response = "Please stop talking.";
+		}
+		else if (whichResponse == 5){
+			response = "I want to know more.";
+		}
 		return response;
 	}
 

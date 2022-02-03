@@ -1,2 +1,2 @@
-# Frog-Hats
-Repo of my APCS work
+# Work Repo for Diana Akhmedova (Frog-Hats)
+## APCS 2021-2022

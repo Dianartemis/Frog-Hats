@@ -293,10 +293,10 @@ public class Magpie5
 			"Hmmm.",
 			"Do you really think so?",
 			"You don't say.",
-			"Can you tell me more?",
-			"Why is that?",
-			"You're boring me.",
-			"That's interesting."
+			"Please stop talking.",
+			"That is so interesting!",
+			"Tell me more.",
+			"Really?"
 	};
 
 }
