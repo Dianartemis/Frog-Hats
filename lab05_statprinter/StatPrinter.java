@@ -1,8 +1,8 @@
-// Clyde "Thluffy" Sinclair
-// APCS pd0
+// Hand Sanitizers (Yat Long Chan + Diana Akhmedova)
+// APCS pd8
 // L05 -- pulling it together
 // 2022-02-03r
-// time spent:  hrs
+// time spent: 0.5 hrs
 
 
 /**
@@ -64,19 +64,16 @@ public class StatPrinter
   //          _frequency.get(i) returns frequency of i in data
   //eg, for data [2,3,2,5,2,3]
   //  _frequency would be [0,0,3,2,0,1]
+
+  //time complexity: O(n)
   public StatPrinter( ArrayList <Integer> data )
   {
     _frequency = new ArrayList<Integer>();
-    for (int i = 0; i < data.size(); i++) {
-      for (int j = i + 1; j < data.size(); j++) {
-        if (data.get(j) != i && data.get(i) != i) {
-          _frequency.add(0);
-        }
-        else {
-          int newVal = _frequency.get(i) + 1;
-          _frequency.set(i, newVal);
-        }
-      }
+    while (_frequency.size() != max(data) + 1) {
+      _frequency.add(0);
+    }
+    for (Integer i : data) {
+      _frequency.set(i, _frequency.get(i) + 1);
     }
     System.out.println(_frequency);
   }
@@ -85,11 +82,17 @@ public class StatPrinter
   //*************** QUESTION 01 **************************
   //precond:  data.size() > 0
   //postcond: returns largest integer in data
+
+  //time complexity: O(n)
   public Integer max( ArrayList <Integer> data )
   {
-    for (int i = 0; i < data.size(); i++) {
-      
+    int max = data.get(0);
+    for (int i = 1; i < data.size(); i++) {
+      if (max < data.get(i)) {
+        max = data.get(i);
+      }
     }
+    return max;
   }
 
 
@@ -103,25 +106,53 @@ public class StatPrinter
   //    isLocalMode(0) -> false
   //    isLocalMode(1) -> true
   //    isLocalMode(5) -> true
+
+  //time complexity: O(1)
   public boolean isLocalMode( int i )
   {
-    return true;
+    if (i > 0 && i < _frequency.size() - 1 && _frequency.get(i - 1) < _frequency.get(i) && _frequency.get(i + 1) < _frequency.get(i)) {
+      return true;
+    }
+    return false;
   }
 
 
   //*************** QUESTION 04 **************************
   //postcond: returns list of modes in _frequency
+
+  //time complexity: O(n)
   public ArrayList<Integer> getLocalModes()
   {
-    return _frequency;
+    ArrayList<Integer> getLocalModes = new ArrayList<Integer>();
+    for (int i = 1; i < _frequency.size() - 1; i++) {
+      if (isLocalMode(i)) {
+        getLocalModes.add(_frequency.get(i));
+      }
+    }
+    return getLocalModes;
   }
 
 
   //*************** QUESTION 05 **************************
   //precond:  longestBar > 0
+
+  //time complexity: O(n^2)
   public void printHistogram( int longestBar )
   {
-    System.out.println();
+    for (int i = 0; i < _frequency.size(); i++) {
+      int barSize;
+      System.out.print(i + " : ");
+      if (_frequency.get(i) == max(_frequency)) {
+        barSize = longestBar;
+      }
+      else {
+        barSize = (int)(longestBar / max(_frequency)) * _frequency.get(i);
+      }
+      for (int j = 0; j < barSize; j++) {
+        System.out.print("*");
+      }
+      System.out.println();
+    }
   }
 
 }//end class StatPrinter
