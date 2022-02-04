@@ -139,6 +139,7 @@ public class StatPrinter
   //time complexity: O(n^2)
   public void printHistogram( int longestBar )
   {
+    int counter = 0;
     int max = max(_frequency);
     for (int i = 0; i < _frequency.size(); i++) {
       int barSize;
@@ -151,9 +152,11 @@ public class StatPrinter
       }
       for (int j = 0; j < barSize; j++) {
         System.out.print("*");
+        counter++;
       }
       System.out.println();
     }
+    System.out.println(counter);
   }
 
 }//end class StatPrinter
