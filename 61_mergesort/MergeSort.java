@@ -2,7 +2,7 @@
 
   Hand Sanitizers (Yat Long Chan + Diana Akhmedova)
   APCS pd8
-  HW61 -- merge sort
+  HW61 -- Instructions so Simple...
   2022-02-08t
   time spent: 0.5 hrs
 
