@@ -1,0 +1,17 @@
+Hand Sanitizers (Yat Long Chan + Diana Akhmedova)
+APCS pd8
+HW61 -- Instructions so Simple...
+2022-02-08t
+time spent: 0.5 hrs
+
+DISCO:
+------------------------------------------------
+* For an unsorted array, you should create two subarrays consisting of a left and right half, copy the elements for the two halves, and repeat for each subarray before merging.
+* You can repeat the sorting process for each subarray recursively.
+================================================
+
+
+QCC:
+------------------------------------------------
+* What is the efficiency of MergeSort compared to the other sorts that we have worked with?
+================================================
