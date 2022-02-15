@@ -1,3 +1,10 @@
+/**
+CATVLLVS VIII x II | Faiza Huda, Diana Akhmedova, Truthful Tom, Ajax, Huebert
+APCS pd8
+HW64 -- Revistitation
+time spent: 1 hr
+**/
+
 public class bunnyEars2 {
   public static void main(String[] args) {
     System.out.println(bunnyEars2(0));
