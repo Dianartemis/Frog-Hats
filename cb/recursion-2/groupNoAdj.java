@@ -1,3 +1,10 @@
+/**
+CATVLLVS VIII x II | Faiza Huda, Diana Akhmedova, Truthful Tom, Ajax, Huebert
+APCS pd8
+HW64 -- Revistitation
+time spent: 1 hr
+**/
+
 public class groupNoAdj {
   public static void main(String[] args) {
     System.out.println(groupNoAdj(0, new int[] {2, 5, 10, 4}, 12));
