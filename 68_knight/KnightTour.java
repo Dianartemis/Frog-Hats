@@ -1,8 +1,8 @@
-// Clyde Sinclair
 // APCS pd8
+// Hand Sanitizers (Yat Long Chan + Diana Akhmedova + David Chen)
 // HW68 -- recursively probing for a closed cycle
 // 2022-02-28m
-// time spent:  hrs
+// time spent: 0.5 hr
 
 /***
  * SKELETON
@@ -14,17 +14,26 @@
  * $ java KnightTour
  * $ java KnightTour [N]
  *
- * ALGO
+ * ALGO:
+ * - If all squares have been visited:
+ *    - Solution has been found.
+ * - Else:
+ *    - Check possible movement of the knight at current position.
+ *    - If the move is valid, recursively check the next positions for a solution.
+ *    - If a move is invalid, backtrack and check the alternatives.If all alternatives are invalid, no solution exists.
  *
- * DISCO
+ * DISCO:
+ * - A knight can make a total of 8 different L-shaped moves.
+ * - The execution time appears to increase by a factor of 40.6.
  *
- * QCC
+ * QCC:
+ * - How do we calculate the number of possible solutions for any board size?
  *
  * Mean execution times for boards of size n*n:
  * n=5   6.7608s    across 5 executions
- * n=6   __s    across 5 executions
- * n=7   __s    across 5 executions
- * n=8   __s    across 5 executions
+ * n=6   274.488s    across 1 execution
+ * n=7   11,144.193s    across 1 execution
+ * n=8   452,453.457s    across 1 execution
  *
  * POSIX PROTIP: to measure execution time from BASH, use time program:
  * $ time java KnightTour 5
@@ -59,14 +68,20 @@ public class KnightTour
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //for fixed starting location, use line below:
-    tf.findTour( 2, 2, 1);
+    //tf.findTour( 2, 2, 1);
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //for random starting location, use lines below:
-    //int startX = (int) (Math.random() * n);
-    //int startY = (int) (Math.random() * n);
-    //tf.findTour( startX, startY, 1 );   // 1 or 0 ?
+    int startX = (int) (Math.random() * n);
+    int startY = (int) (Math.random() * n);
+    while (startX == 0 || startX == 1 ) {
+      startX = (int) (Math.random() * n + 2);
+    }
+    while (startY == 0 || startY == 1) {
+      startY = (int) (Math.random() * n + 2);
+    }
+    tf.findTour( startX, startY, 1 );   // 1 or 0 ?
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
