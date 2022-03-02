@@ -32,8 +32,9 @@
  * Mean execution times for boards of size n*n:
  * n=5   6.7608s    across 5 executions
  * n=6   274.488s    across 1 execution
- * n=7   11,144.193s    across 1 execution
- * n=8   452,453.457s    across 1 execution
+ * n=7   __s    across 1 execution (prediction: 11,144.193s)
+ * n=8   __s    across 1 execution (prediction: 452,453.457s)
+ * Took 6m 53s 776ms to find knights tour for every position on a board of size 5x5
  *
  * POSIX PROTIP: to measure execution time from BASH, use time program:
  * $ time java KnightTour 5
@@ -173,7 +174,7 @@ class TourFinder
     //delay(50); //slow it down enough to be followable
 
     //if a tour has been completed, stop animation
-    if ( moves == _sideLength * _sideLength + 1 ) System.exit(0);
+    if ( _solved ) System.exit(0);
 
     //primary base case: tour completed
     if ( moves == _sideLength * _sideLength + 1 ) {
