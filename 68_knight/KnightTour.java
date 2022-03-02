@@ -1,5 +1,5 @@
 // Clyde Sinclair
-// APCS pd0
+// APCS pd8
 // HW68 -- recursively probing for a closed cycle
 // 2022-02-28m
 // time spent:  hrs
@@ -21,10 +21,10 @@
  * QCC
  *
  * Mean execution times for boards of size n*n:
- * n=5   __s    across __ executions
- * n=6   __s    across __ executions
- * n=7   __s    across __ executions
- * n=8   __s    across __ executions
+ * n=5   6.7608s    across 5 executions
+ * n=6   __s    across 5 executions
+ * n=7   __s    across 5 executions
+ * n=8   __s    across 5 executions
  *
  * POSIX PROTIP: to measure execution time from BASH, use time program:
  * $ time java KnightTour 5
@@ -97,8 +97,8 @@ class TourFinder
     //SETUP BOARD --  0 for unvisited cell
     //               -1 for cell in moat
     //---------------------------------------------------------
-    for (int x = 0; x < _board.length; x ++) {
-      for (int y = 0; y < _board.length; y ++) {
+    for (int x = 0; x < _board.length; x++) {
+      for (int y = 0; y < _board.length; y++) {
         if (x == 0 || y == 0 || x == 1 || y == 1 || x == _board.length - 1 || y == _board.length - 1 || x == _board.length - 2 || y == _board.length - 2) {
           _board[y][x] = -1;
         } else {
