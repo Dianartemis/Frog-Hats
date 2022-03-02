@@ -1,6 +1,6 @@
 // APCS pd8
 // Hand Sanitizers (Yat Long Chan + Diana Akhmedova + David Chen)
-// HW68 -- recursively probing for a closed cycle
+// HW68 -- ...and T-, Tr-, Tri-, Tries Again Until It's Done / Completed Knight's Tour class
 // 2022-02-28m
 // time spent: 0.5 hr
 
