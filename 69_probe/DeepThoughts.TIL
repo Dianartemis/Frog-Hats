@@ -1,0 +1,73 @@
+Diana Akhmedova, Gloria Lee, Jack Chen (TNPG: BrainFork)
+APCS pd8
+HW69 -- Making Sense
+2022-03-02
+time spent: 0.7 hr
+
+In a plaintext file with proper heading and a reprinting of your Knight’s Tour execution time measurements, respond to each prompt below.
+
+* n=5     0.403s    across 3 executions
+0m0.513s
+0m0.362s
+0m0.333s
+
+* n=6     0.341s    across 3 executions
+0m0.394s
+0m0.299s
+0m0.330s
+
+* n=7     0.903s    across 3 executions
+0m0.745s
+0m0.993s
+0m0.970s
+
+* n=8     0.628s    across 3 executions
+0m0.695s
+0m0.615s
+0m0.573s
+
+
+q0: From any starting position, can an open tour always be found? Explain.
+* Yes, an open tour can always be found because in an open tour, the Knight does not have to end on a square that is one move away from the beginning square.
+
+q1: Same, but for closed tour.
+* No, a closed tour will not always be found because the knight has to end on a tile that is one knight move away from the beginning tile.
+
+q2: How do you explain the increase in execution time as n increases?
+* The increase in execution time as n increases can be explained by an increasing amount of possible knights tours to go through as the number of nodes you are presented with increases.
+* The even numbered chess board configs, on average, took less time to run than the odd numbered ones. (Why?)
+
+q3: Thoughts on optimization?
+* Print statements slow down the method so comment them out.
+
+
+State your cleanest algo for finding your way out of a maze (of the “2D” style discussed in class).
+
+Algo:
+  * If:
+    - The maze is solved, exit the maze (maze is solved when the current tile's value is E).
+    - Current tile value is #, return ("backtrack").
+  * Else:
+    - Move one tile up.
+    - Move one tile right.
+    - Move one tile down.
+    - Move one tile left.
+
+Starting State:
+A grid with symbols representing walls, the exit, available spaces to walk on, and the navigator symbol at the beginning position.
+$ => Space the navigator can walk on
+# => Wall
+@ => The maze runner
+E => The Exit
+
+Assumptions:
+- The maze runner can move one tile up/down/right/left.
+- The maze is solvable and has the correct components.
+- The maze is closed by an outer wall.
+
+Goal:
+- The maze runner starts at the beginning position of the maze.
+- The goal would be to reach the tile labelled E, which is the end of the maze.
+- The Maze runner can move once tile each in the horizontal and vertical direction.
+- If the runner encounters a wall, the runner would go back to its previous tile and see if there is another route.
+- If the runner traverses to the tile with E, a solution to the maze has been found.
