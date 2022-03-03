@@ -30,10 +30,10 @@
  * - How do we calculate the number of possible solutions for any board size?
  *
  * Mean execution times for boards of size n*n:
- * n=5   6.7608s    across 5 executions
- * n=6   274.488s    across 1 execution
- * n=7   __s    across 1 execution (prediction: 11,144.193s)
- * n=8   __s    across 1 execution (prediction: 452,453.457s)
+ * n=5   0.403s    across 3 executions
+ * n=6   0.341s    across 3 executions
+ * n=7   0.903s    across 3 executions
+ * n=8   0.628s    across 3 executions
  * Took 6m 53s 776ms to find knights tour for every position on a board of size 5x5
  *
  * POSIX PROTIP: to measure execution time from BASH, use time program:
