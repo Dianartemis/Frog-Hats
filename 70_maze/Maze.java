@@ -175,17 +175,40 @@ class MazeSolver
       }
       _maze[x][y] = HERO;
       System.out.println( this ); //refresh screen
-      if (_maze[x][y - 1] == PATH || _maze[x - 1][y] == PATH || _maze[x][y + 1] == PATH || _maze[x + 1][y] == PATH) {
+      if (_maze[x][y - 1] == PATH) {
+        System.out.println("a");
         solve(x, y - 1); //up
-        solve(x - 1, y); //right
+        solve(x + 1, y); //right
         solve(x, y + 1); //down
-        solve(x + 1, y); //left
+        solve(x - 1, y); //left
+      }
+      else if (_maze[x + 1][y] == PATH) {
+        System.out.println("b");
+        solve(x + 1, y); //right
+        solve(x, y - 1); //up
+        solve(x, y + 1); //down
+        solve(x - 1, y); //left
+      }
+      else if (_maze[x][y + 1] == PATH) {
+        System.out.println("c");
+        solve(x, y + 1); //down
+        solve(x, y - 1); //up
+        solve(x + 1, y); //right
+        solve(x - 1, y); //left
+      }
+      else if (_maze[x - 1][y] == PATH) {
+        System.out.println("d");
+        solve(x - 1, y); //left
+        solve(x, y - 1); //up
+        solve(x + 1, y); //right
+        solve(x, y + 1); //down
       }
       else {
+        System.out.println("e");
         solve(x, y - 1); //up
-        solve(x - 1, y); //right
+        solve(x + 1, y); //right
         solve(x, y + 1); //down
-        solve(x + 1, y); //left
+        solve(x - 1, y); //left
       }
       _maze[x][y] = PATH;
       System.out.println( this ); //refresh screen
