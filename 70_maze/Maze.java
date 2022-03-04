@@ -1,26 +1,37 @@
-// Clyde Sinclair
-// APCS pd0
-// HW69 -- maze solving (blind, depth-first)
+// Diana Akhmedova, Gloria Lee, Jack Chen (TNPG: BrainFork)
+// APCS pd8
+// HW70 -- Thinkers of the Corn
 // 2022-03-03r
-// time spent:  hrs
+// time spent: 1 hr
 
 /***
  * SKEELTON for
  * class MazeSolver
  * Implements a blind depth-first exit-finding algorithm.
  * Displays probing in terminal.
- * 
- * USAGE: 
+ *
+ * USAGE:
  * $ java Maze [path/to/mazefile]
  * (mazefile is ASCII representation of a maze, using symbols below)
  *
  * ALGORITHM for finding exit from starting position:
- *  <INSERT YOUR SUMMARY OF ALGO HERE>
+ * - IF:
+ *    - The maze is solved, exit the maze (maze is solved when the current tile value is "$").
+ *    - Current tile value is " " or ".", return.
+ * - ELSE:
+ *    - If: The next open tile is "#"...
+ *        - Move one tile up/right/down/left.
+ *    - Else:
+ *        - Move one tile up/right/down/left.
+ * - Otherwise, the maze is unsolveable.
  *
- * DISCO
- * 
- * QCC
- * 
+ * DISCO:
+ * - The maze utilizes characters, not Strings, so you would use ==, not the equals() method.
+ *
+ * QCC:
+ * - Is a visited path the same as a dead end? If not, how do we represent a dead end?
+ * - How do we avoid ending up in an endless loop?
+ *
  ***/
 
 //enable file I/O
@@ -30,7 +41,7 @@ import java.util.*;
 
 class MazeSolver
 {
-  final private int FRAME_DELAY = 50;
+  final private int FRAME_DELAY = 200;
 
   private char[][] _maze;
   private int h, w; // height, width of maze
@@ -130,28 +141,70 @@ class MazeSolver
     delay( FRAME_DELAY ); //slow it down enough to be followable
 
     //primary base case
-    if ( ??? ) {
-	???
+    if ( _solved ) {
+      System.exit(0);
     }
     //other base cases
-    else if ( ??? ) {
-	???
+    else if ( _maze[x][y] == EXIT ) {
+      _solved = true;
+      System.out.println( this ); //refresh screen
+      return;
+    }
+    else if ( _maze[x][y] == WALL ) {
       return;
     }
     //otherwise, recursively solve maze from next pos over,
     //after marking current location
     else {
-	???
+      int counter = 0;
+      if (_maze[x + 1][y] == WALL || _maze[x + 1][y] == VISITED_PATH) {
+        counter++;
+      }
+      if (_maze[x - 1][y] == WALL || _maze[x - 1][y] == VISITED_PATH ) {
+        counter++;
+      }
+      if (_maze[x][y + 1] == WALL || _maze[x][y + 1] == VISITED_PATH) {
+        counter++;
+      }
+      if (_maze[x][y - 1] == WALL || _maze[x][y - 1] == VISITED_PATH) {
+        counter++;
+      }
+      if (counter >= 3) { //dead end
+        _maze[x][y] = VISITED_PATH;
+        return;
+      }
+      _maze[x][y] = HERO;
       System.out.println( this ); //refresh screen
-
-???
+      if (_maze[x][y - 1] == PATH || _maze[x - 1][y] == PATH || _maze[x][y + 1] == PATH || _maze[x + 1][y] == PATH) {
+        solve(x, y - 1); //up
+        solve(x - 1, y); //right
+        solve(x, y + 1); //down
+        solve(x + 1, y); //left
+      }
+      else {
+        solve(x, y - 1); //up
+        solve(x - 1, y); //right
+        solve(x, y + 1); //down
+        solve(x + 1, y); //left
+      }
+      _maze[x][y] = PATH;
       System.out.println( this ); //refresh screen
     }
   }
 
   //accessor method to help with randomized drop-in location
   public boolean onPath( int x, int y) {
-      
+    for (int i = 0; i < _maze.length; i++) {
+      for (int h = 0; h < _maze[i].length; h++) {
+        if (_maze[i][h] == PATH) {
+          return true;
+        }
+        else {
+          return false;
+        }
+      }
+    }
+    return false;
   }
 
 }//end class MazeSolver
@@ -170,7 +223,7 @@ public class Maze
       System.out.println( "USAGE:\n $ java Maze path/to/filename" );
     }
 
-    if (mazeInputFile==null) { System.exit(0); }
+    if (mazeInputFile == null) { System.exit(0); }
 
     MazeSolver ms = new MazeSolver( mazeInputFile );
 
