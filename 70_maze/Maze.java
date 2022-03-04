@@ -150,7 +150,7 @@ class MazeSolver
       System.out.println( this ); //refresh screen
       return;
     }
-    else if ( _maze[x][y] == WALL ) {
+    else if ( _maze[x][y] == WALL || _maze[x][y] == VISITED_PATH || _maze[x][y] == HERO ) {
       return;
     }
     //otherwise, recursively solve maze from next pos over,
@@ -173,44 +173,14 @@ class MazeSolver
         _maze[x][y] = VISITED_PATH;
         return;
       }
+      counter = 0;
       _maze[x][y] = HERO;
       System.out.println( this ); //refresh screen
-      if (_maze[x][y - 1] == PATH) {
-        System.out.println("a");
-        solve(x, y - 1); //up
-        solve(x + 1, y); //right
-        solve(x, y + 1); //down
-        solve(x - 1, y); //left
-      }
-      else if (_maze[x + 1][y] == PATH) {
-        System.out.println("b");
-        solve(x + 1, y); //right
-        solve(x, y - 1); //up
-        solve(x, y + 1); //down
-        solve(x - 1, y); //left
-      }
-      else if (_maze[x][y + 1] == PATH) {
-        System.out.println("c");
-        solve(x, y + 1); //down
-        solve(x, y - 1); //up
-        solve(x + 1, y); //right
-        solve(x - 1, y); //left
-      }
-      else if (_maze[x - 1][y] == PATH) {
-        System.out.println("d");
-        solve(x - 1, y); //left
-        solve(x, y - 1); //up
-        solve(x + 1, y); //right
-        solve(x, y + 1); //down
-      }
-      else {
-        System.out.println("e");
-        solve(x, y - 1); //up
-        solve(x + 1, y); //right
-        solve(x, y + 1); //down
-        solve(x - 1, y); //left
-      }
-      _maze[x][y] = PATH;
+      solve(x, y - 1); //up
+      solve(x + 1, y); //right
+      solve(x, y + 1); //down
+      solve(x - 1, y); //left
+      _maze[x][y] = VISITED_PATH;
       System.out.println( this ); //refresh screen
     }
   }
@@ -229,7 +199,6 @@ class MazeSolver
     }
     return false;
   }
-
 }//end class MazeSolver
 
 
