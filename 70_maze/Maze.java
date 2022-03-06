@@ -1,8 +1,8 @@
 // Diana Akhmedova, Gloria Lee, Jack Chen (TNPG: BrainFork)
 // APCS pd8
 // HW70 -- Thinkers of the Corn
-// 2022-03-03r
-// time spent: 1 hr
+// 2022-03-07m
+// time spent: 2hrs
 
 /***
  * SKEELTON for
@@ -17,20 +17,24 @@
  * ALGORITHM for finding exit from starting position:
  * - IF:
  *    - The maze is solved, exit the maze (maze is solved when the current tile value is "$").
- *    - Current tile value is " " or ".", return.
+ *    - Current tile value is " " or "." or "@", return. (to avoid walls, already visited paths).
  * - ELSE:
- *    - If: The next open tile is "#"...
+ *    - If: The tile is "#"...
+ *        - Current tile becomes "@".
  *        - Move one tile up/right/down/left.
  *    - Else:
- *        - Move one tile up/right/down/left.
+ *        - If all four directions are ruled out, tile becomes "."
  * - Otherwise, the maze is unsolveable.
  *
  * DISCO:
  * - The maze utilizes characters, not Strings, so you would use ==, not the equals() method.
+ * - To save our mazes with the whitespace, we had to disable the whitespace package in settings.
+ * - We will receive an out of bounds error if we made the maze larger than the row and column we initally set.
  *
  * QCC:
  * - Is a visited path the same as a dead end? If not, how do we represent a dead end?
  * - How do we avoid ending up in an endless loop?
+ * - To drop the hero on random locations on the path, should we set h and w to public or use accessor methods?
  *
  ***/
 
@@ -41,10 +45,10 @@ import java.util.*;
 
 class MazeSolver
 {
-  final private int FRAME_DELAY = 200;
+  final private int FRAME_DELAY = 50;
 
   private char[][] _maze;
-  private int h, w; // height, width of maze
+  public int h, w; // height, width of maze
   private boolean _solved;
 
   //~~~~~~~~~~~~~  L E G E N D  ~~~~~~~~~~~~~
@@ -156,24 +160,24 @@ class MazeSolver
     //otherwise, recursively solve maze from next pos over,
     //after marking current location
     else {
-      int counter = 0;
-      if (_maze[x + 1][y] == WALL || _maze[x + 1][y] == VISITED_PATH) {
-        counter++;
-      }
-      if (_maze[x - 1][y] == WALL || _maze[x - 1][y] == VISITED_PATH ) {
-        counter++;
-      }
-      if (_maze[x][y + 1] == WALL || _maze[x][y + 1] == VISITED_PATH) {
-        counter++;
-      }
-      if (_maze[x][y - 1] == WALL || _maze[x][y - 1] == VISITED_PATH) {
-        counter++;
-      }
-      if (counter >= 3) { //dead end
-        _maze[x][y] = VISITED_PATH;
-        return;
-      }
-      counter = 0;
+      // int counter = 0;
+      // if (_maze[x + 1][y] == WALL || _maze[x + 1][y] == VISITED_PATH) {
+      //   counter++;
+      // }
+      // if (_maze[x - 1][y] == WALL || _maze[x - 1][y] == VISITED_PATH ) {
+      //   counter++;
+      // }
+      // if (_maze[x][y + 1] == WALL || _maze[x][y + 1] == VISITED_PATH) {
+      //   counter++;
+      // }
+      // if (_maze[x][y - 1] == WALL || _maze[x][y - 1] == VISITED_PATH) {
+      //   counter++;
+      // }
+      // if (counter >= 3) { //dead end
+      //   _maze[x][y] = VISITED_PATH;
+      //   return;
+      // }
+      // counter = 0;
       _maze[x][y] = HERO;
       System.out.println( this ); //refresh screen
       solve(x, y - 1); //up
@@ -187,18 +191,25 @@ class MazeSolver
 
   //accessor method to help with randomized drop-in location
   public boolean onPath( int x, int y) {
-    for (int i = 0; i < _maze.length; i++) {
-      for (int h = 0; h < _maze[i].length; h++) {
-        if (_maze[i][h] == PATH) {
-          return true;
-        }
-        else {
-          return false;
-        }
-      }
+    if (_maze[x][y] == PATH) {
+      return true;
     }
-    return false;
+    else {
+      return false; 
+    }
   }
+  //   for (int i = 0; i < _maze.length; i++) {
+  //     for (int h = 0; h < _maze[i].length; h++) {
+  //       if (_maze[i][h] == PATH) {
+  //         return true;
+  //       }
+  //       else {
+  //         return false;
+  //       }
+  //     }
+  //   }
+  //   return false;
+  // }
 }//end class MazeSolver
 
 
@@ -227,11 +238,21 @@ public class Maze
 
     //drop hero into the maze (coords must be on path)
     // ThinkerTODO: comment next line out when ready to randomize startpos
-    ms.solve( 4, 3 );
+    // ms.solve( 4, 3 );
 
     //drop our hero into maze at random location on path
     // YOUR RANDOM-POSITION-GENERATOR CODE HERE
-    //ms.solve( startX, startY );
+    
+    // int startX = 4;
+    // int startY = 3;
+    int startX = (int)(Math.random() * ms.w);
+    int startY = (int)(Math.random() * ms.h);
+    if (ms.onPath( startX, startY )) {
+      ms.solve( startX, startY );
+    }
+    else {
+      ms.solve( 4, 3 );
+    }
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
