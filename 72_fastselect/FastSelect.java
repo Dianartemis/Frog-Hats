@@ -146,7 +146,7 @@ public class FastSelect
     // Worst Case Scenario
     // Splitter is on opposite ends with the target
     System.out.println(fastSelect(arr5, 0, 4, 1)); // smallest element in arr5
-asdadf
+
 
         /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // run relativeSort on each array,
