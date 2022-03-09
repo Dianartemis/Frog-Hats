@@ -120,6 +120,7 @@ public class FastSelect
     }
     else if (splitterIndex > y - 1) {
       return fastSelect(arr, lo, splitterIndex, y);
+
     } else {
       return fastSelect(arr, splitterIndex, hi, y);
     }
@@ -132,24 +133,20 @@ public class FastSelect
   {
 
     //init test arrays of magic numbers
-    int[] arr1 = {1,2,3,4,5};
-    int[] arr3 = {1,28,33,4982,37};
+    int[] arr1 = {3,2,1,4,5};
+    int[] arr3 = {33,28,1,4982,37};
     int[] arr4 = {5,4,17,9000,6};
     int[] arr5 = {5,4,3,2,1};
 
     // Best Case Scenario
     // Splitter is on the target
     System.out.println(fastSelect(arr3, 0, 4, 1)); // smallest element in arr3
-    System.out.println(fastSelect(arr3, 0, 4, 2));
-    System.out.println(fastSelect(arr3, 0, 4, 3));
-    System.out.println(fastSelect(arr3, 0, 4, 4));
+    System.out.println(fastSelect(arr1, 0, 4, 1)); // smallest element in arr1
 
     // Worst Case Scenario
     // Splitter is on opposite ends with the target
     System.out.println(fastSelect(arr5, 0, 4, 1)); // smallest element in arr5
-    System.out.println(fastSelect(arr5, 0, 4, 2));
-    System.out.println(fastSelect(arr5, 0, 4, 3));
-    System.out.println(fastSelect(arr5, 0, 4, 4));
+
 
         /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // run relativeSort on each array,
