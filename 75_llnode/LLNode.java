@@ -107,7 +107,7 @@ public class LLNode
     // System.out.println( "The size of the list is: " + first.size() + "...should be 1");
 
     //   Uncomment these once you've coded them
-    //   System.out,println( first.get(0) );
+    //   System.out.println( first.get(0) );
     //   System.out.println( first.add("dog") );
     //   System.out.println( first.set(0, "cow") )
 
