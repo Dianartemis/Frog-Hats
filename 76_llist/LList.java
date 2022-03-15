@@ -7,11 +7,10 @@ time spent : 0.8 hrs
 */
 
 /*
-DISCO:
+DISCO
 - We should check if the list already has an element while adding elements to the linked list.
-
-QCC:
-- Why do we keep getting IndexOurOfBoundsException for our size()?
+QCC
+- How should we print the linked list?
 */
 
 /***
@@ -30,7 +29,7 @@ public class LList implements List //interface def must be in this dir
   public LList()
   {
     _head = new LLNode(null, null);
-    _size = 1;
+    _size = size();
   }
 
 
@@ -99,7 +98,8 @@ public class LList implements List //interface def must be in this dir
   {
     int i = 0;
     LLNode temp = _head;
-    if( temp.getCargo() != null ) {
+    if( _head.getCargo() != null ) {
+        i ++;
         while (temp.getNext() != null) {
             temp = temp.getNext();
             i++;
@@ -117,12 +117,11 @@ public class LList implements List //interface def must be in this dir
   {
     String ans = "";
     LLNode temp = _head;
-    ans = temp.getCargo() + ", null";
     for (int i = 0; i < size() && _head != null; i++){
-      ans = temp.getCargo() + " ( " + ans + " )";
+      ans = temp.getCargo() + " " + ans;
       temp = temp.getNext();
     }
-    return "( " + ans + " )";
+    return ans;
   }
 
 
