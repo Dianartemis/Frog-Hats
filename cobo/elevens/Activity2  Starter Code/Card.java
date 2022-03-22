@@ -1,3 +1,9 @@
+//KAFFEINE CIDS: ANJINI KATARI, YUKI FENG, JOSHUA GAO, DIANA AKHMEDOVA
+//LAB07: ELEVENS!!
+//APCS PD08
+//2021-03-20
+//time spent: 3.0 hrs
+
 /**
  * Card.java
  *
@@ -32,6 +38,7 @@ public class Card {
 	 *                  containing the point value of the card
 	 */
 	public Card(String cardRank, String cardSuit, int cardPointValue) {
+		//initializes a new Card with the given rank, suit, and point value
 		rank = cardRank;
 		suit = cardSuit;
 		pointValue = cardPointValue;
@@ -44,7 +51,7 @@ public class Card {
 	 */
 	public String suit() {
 		return suit;
-   }
+	}
 
 	/**
 	 * Accesses this <code>Card's</code> rank.
@@ -69,12 +76,9 @@ public class Card {
 	 *         false otherwise.
 	 */
 	public boolean matches(Card otherCard) {
-		if (otherCard.rank() == rank && otherCard.pointValue() == pointValue && otherCard.suit() == suit) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		return otherCard.suit().equals(this.suit())
+			&& otherCard.rank().equals(this.rank())
+			&& otherCard.pointValue() == this.pointValue();
 	}
 
 	/**
@@ -89,8 +93,6 @@ public class Card {
 	 */
 	@Override
 	public String toString() {
-		//rank of suit (point value = pointValue)
-		String s =  rank + "of" + suit + "(point value = " + pointValue + ")";
-		return s;
+		return rank + " of " + suit + " (point value = " + pointValue + ")";
 	}
 }

@@ -1,3 +1,9 @@
+//KAFFEINE CIDS: ANJINI KATARI, YUKI FENG, JOSHUA GAO, DIANA AKHMEDOVA
+//LAB07: ELEVENS!!
+//APCS PD08
+//2021-03-20
+//time spent: 3.0 hrs
+
 /**
  * This is a class that tests the Deck class.
  */
@@ -51,6 +57,59 @@ public class DeckTester {
 		System.out.println();
 		System.out.println();
 
-		/* *** TO BE COMPLETED IN ACTIVITY 4 *** */
+		String[] r = new String[52]; // ace = 1, jack = 11, queen = 12, king = 13 | rest are pv
+		String[] s = new String[52]; // first 13 = spades, hearts, diamonds, clubs
+		int[] pv = new int[52]; //nums 1(ace) - 13(king)
+
+		for (int i=0; i<=51; i++) {
+			String rank = "";
+			String suit = "";
+			//ace = 1
+			if ( (i+1) % 13 ==1) {
+				rank = "Ace";
+			}
+			//jack(11), queen(12), king(13)
+			else if ( (i+1) % 13 ==11) {
+				rank = "Jack";
+			}
+
+			else if ( (i+1) % 13 ==12) {
+				rank = "Queen";
+			}
+
+			else if ( (i+1) % 13 ==0) {
+				rank = "King";
+			}
+			//all the normal cards
+			else {
+				rank = Integer.toString((i+1) % 13);
+			}
+
+			//String []s
+			if (i < 13) {
+				suit = "Spades";
+			}
+
+			if (i < 26) {
+				suit = "Hearts";
+			}
+
+			if (i < 39) {
+				suit = "Diamonds";
+			}
+
+			else  {
+				suit = "Clubs";
+			}
+
+			//update the deck
+			r[i] = rank;
+			s[i] = suit;
+			pv[i] = ((i+1) % 13);
+
+			//Create new deck
+			Deck edith = new Deck (r, s, pv);
+			System.out.println(edith);
+		}
 	}
 }

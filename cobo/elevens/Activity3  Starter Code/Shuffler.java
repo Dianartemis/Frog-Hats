@@ -1,3 +1,8 @@
+//KAFFEINE CIDS: ANJINI KATARI, YUKI FENG, JOSHUA GAO, DIANA AKHMEDOVA
+//LAB07: ELEVENS!!
+//APCS PD08
+//2021-03-20
+//time spent: 3.0 hrs
 /**
  * This class provides a convenient way to test shuffling methods.
  */
@@ -7,7 +12,7 @@ public class Shuffler {
 	 * The number of consecutive shuffle steps to be performed in each call
 	 * to each sorting procedure.
 	 */
-	private static final int SHUFFLE_COUNT = 2;
+	private static final int SHUFFLE_COUNT = 1;
 
 
 	/**
@@ -50,17 +55,17 @@ public class Shuffler {
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
 	public static void perfectShuffle(int[] values) {
-		int[] shuffled = new int[values.length];
-		int k = 0;
-		for (int j = 0; j < (values.length / 2) ; j++){
-			shuffled[k] = values[j];
-			k = k + 2;
+		int[] shuffle = new int[values.length];
+
+		int half = values.length / 2;
+		//k is for shuffle, i is for values 
+		for (int i = 0, k = 0; i < half; i++, k+=2){
+			shuffle[k] = values[i];
 		}
-		k = 1;
-		for (int i = (values.length / 2); i < values.length; i++){
-			shuffled[k] = values[i];
-			k = k + 2;
-		}       
+		
+		for (int j = half, m = 1; j < values.length; j++, m+=2){
+			shuffle[j] = values[j];
+		}
 	}
 
 	/**
@@ -75,13 +80,17 @@ public class Shuffler {
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
 	public static void selectionShuffle(int[] values) {
-		int[] shuffled = new int[values.length];
-		for (int k = 0;	k < values.length; k++){
-			int j = (int) (Math.random() * values.length);
-			if (values[k] == 0){
-				shuffled[k] = values[j];
-				values[j] = 0;
-			}
+		int[] shuffle = new int[values.length];
+		int len = values.length;
+
+		for (int i = len - 1; i >= 0; i --){
+			int ind = (int) (Math.random() * (i + 1));
+			int temp = values[ind];
+			values[ind] = values[i];
+			values[i] = temp; 
+
 		}
+
 	}
+
 }

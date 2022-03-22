@@ -1,3 +1,9 @@
+//KAFFEINE CIDS: ANJINI KATARI, YUKI FENG, JOSHUA GAO, DIANA AKHMEDOVA
+//LAB07: ELEVENS!!
+//APCS PD08
+//2021-03-20
+//time spent: 3.0 hrs
+
 /**
  * This is a class that tests the Deck class.
  */

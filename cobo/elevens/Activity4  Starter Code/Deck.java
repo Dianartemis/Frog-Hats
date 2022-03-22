@@ -49,6 +49,12 @@ public class Deck {
 		return size == 0;
 	}
 
+//KAFFEINE CIDS: ANJINI KATARI, YUKI FENG, JOSHUA GAO, DIANA AKHMEDOVA
+//LAB07: ELEVENS!!
+//APCS PD08
+//2021-03-20
+//time spent: 3.0 hrs
+
 	/**
 	 * Accesses the number of undealt cards in this deck.
 	 * @return the number of undealt cards in this deck.
@@ -62,7 +68,14 @@ public class Deck {
 	 * and reset the size to represent the entire deck.
 	 */
 	public void shuffle() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+
+		for (int i = size - 1; i >= 0; i --){
+			int ind = (int) (Math.random() * (i + 1));
+			Card temp = cards.get(ind);
+			cards.set(ind, cards.get(i));
+			cards.set(i, temp); 
+
+		}
 	}
 
 	/**
