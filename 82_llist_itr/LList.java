@@ -152,9 +152,9 @@ public class LList<T> implements List<T> //Q: Why no "implements Iterable" ?
 
 
   //return an Iterator over this list
-  public /* YOUR CODE HERE */
+  public Iterator iterator()
   {
-    return MyIterator();
+    return new MyIterator();
   }
 
   //--------------------------------------------------------
@@ -254,7 +254,8 @@ public class LList<T> implements List<T> //Q: Why no "implements Iterable" ?
     //constructor
     public MyIterator()
     {
-      /* YOUR CODE HERE */
+      _dummy = new DLLNode<T>(null, null, _head);
+      _okToRemove = false;
     }
 
     //-----------------------------------------------------------
@@ -262,18 +263,21 @@ public class LList<T> implements List<T> //Q: Why no "implements Iterable" ?
     //return true if iteration has more elements.
     public boolean hasNext()
     {
-      if (_dummy.getNext() != null) {
-          return true;
-      }
-
-      return false;
+      return _dummy.getNext() != null;
     }
 
 
     //return next element in this iteration
     public T next()
     {
-      return _dummy.getNext();
+      if (hasNext()) {
+        _dummy = _dummy.getNext();
+        T ret = _dummy.getCargo();
+        _okToRemove = true;
+        return ret;
+      } else {
+        throw new NoSuchElementException();
+      }
     }
 
 
@@ -282,18 +286,65 @@ public class LList<T> implements List<T> //Q: Why no "implements Iterable" ?
     //               (...so that hasNext() will not crash)
     public void remove()
     {
-            /* YOUR CODE HERE */
+      if (_okToRemove) {
+        DLLNode<T> _dummyNext = _dummy.getNext();
+        _dummy = _dummy.getPrev();
+        _dummy.setNext(_dummyNext);
+      } else {
+        throw new IllegalStateException();
+      }
+      _okToRemove = false;
+      _size --;
+
+      /*
+      if (_okToRemove) {
+        if (_tail.equals(_head)) { // remove single node
+          removeFirst();
+          _dummy = new DLLNode(null, null, null);
+          _head = new DLLNode(null, null, null;
+          _tail = new DLLNode(null, null, null);
+        }
+        else if (_dummy = _tail) { // remove last node
+          removeLast();
+          _dummy = _tail;
+        }
+        else if (_dummy = _head) { // remove first node
+        removeFirst();
+        _dummy = _head;
+      } else { // remove if node is between other nodes
+        _dummy.getNext().setPrev(_dummy.getPrev());
+        _dummy = _dummy.getPrev();
+        _dummy.setNext(_dummy.getNext().getNext());
+      }
+
+      */
     }
     //--------------^  Iterator interface methods  ^-------------
     //-----------------------------------------------------------
   }//*************** end inner class MyIterator ***************
 
 
-
   //main method for testing
   public static void main( String[] args )
   {
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    List<Integer> frank = new LList<Integer>();
+    frank.add(1);
+    frank.add(2);
+    frank.add(3);
+    frank.add(4);
+    System.out.println(frank);
+
+    MyIterator s = frank.iterator();
+    while (s.hasNext()) {
+      Integer num = (Integer) s.next();
+      if (num % 2 == 0){
+        s.remove();
+      }
+    }
+    System.out.println(s);
+
+
     LList james = new LList();
 
     System.out.println("initially: " );
@@ -336,6 +387,7 @@ public class LList<T> implements List<T> //Q: Why no "implements Iterable" ?
 
     System.out.println( "...after remove(0): " + james.remove(0) );
     System.out.println( james + "\tsize: " + james.size() );
+
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
 

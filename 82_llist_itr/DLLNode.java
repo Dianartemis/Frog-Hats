@@ -11,10 +11,10 @@ public class DLLNode<T> {
 
     // constructor -- initializes instance vars
     public DLLNode( T value, DLLNode<T> prev, DLLNode<T> next )
-{
-	_cargo = value;
-	_nextNode = next;
-	_prevNode = prev;
+    {
+    	_cargo = value;
+    	_nextNode = next;
+    	_prevNode = prev;
     }
 
 
@@ -29,21 +29,21 @@ public class DLLNode<T> {
 
     //--------------v  MUTATORS  v--------------
     public T setCargo( T newCargo ) {
-	T foo = getCargo();
-	_cargo = newCargo;
-	return foo;
+    	T foo = getCargo();
+    	_cargo = newCargo;
+    	return foo;
     }
 
     public DLLNode<T> setNext( DLLNode<T> newNext ) {
-	DLLNode<T> foo = getNext();
-	_nextNode = newNext;
-	return foo;
+    	DLLNode<T> foo = getNext();
+    	_nextNode = newNext;
+    	return foo;
     }
 
     public DLLNode<T> setPrev( DLLNode<T> newPrev ) {
-	DLLNode<T> foo = getPrev();
-	_prevNode = newPrev;
-	return foo;
+    	DLLNode<T> foo = getPrev();
+    	_prevNode = newPrev;
+    	return foo;
     }
     //--------------^  MUTATORS  ^--------------
 
@@ -54,25 +54,25 @@ public class DLLNode<T> {
 
     //main method for testing
     public static void main( String[] args )
-{
-	//Below is an exercise in creating a linked list...
+    {
+    	//Below is an exercise in creating a linked list...
 
-	/*********************
-	//Create a node
-	DLLNode<String> first = new DLLNode<String>( "cat", null );
+    	/*********************
+    	//Create a node
+    	DLLNode<String> first = new DLLNode<String>( "cat", null );
 
-	//Create a new node after the first
-	first.setNext( new DLLNode<String>( "dog", null ) );
+    	//Create a new node after the first
+    	first.setNext( new DLLNode<String>( "dog", null ) );
 
-	//Create a third node after the second
-	first.getNext().setNext( new DLLNode<String>( "cow", null ) );
+    	//Create a third node after the second
+    	first.getNext().setNext( new DLLNode<String>( "cow", null ) );
 
-	DLLNode temp = first;
-	while( temp != null ) {
-	    System.out.println( temp );
-	    temp = temp.getNext();
-	}
-	***********************/
+    	DLLNode temp = first;
+    	while( temp != null ) {
+    	    System.out.println( temp );
+    	    temp = temp.getNext();
+    	}
+    	***********************/
     }//end main
 
 }//end class DLLNode
