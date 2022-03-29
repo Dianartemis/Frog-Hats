@@ -1,3 +1,20 @@
+// Mister George :: Diana Akhmedova, Ziying Jian, Weichen Liu
+// APCS pd08
+// HW84 -- Stack: What Is It Good For?
+// 2022-03-30w
+// time spent : 0.5 hrs
+
+/**
+DISCO:
+- We can use the .split() to turn a string into an array of Strings.
+- We added the getStackSize() and peek() methods in Latkes.java as helper methods.
+
+QCC:
+- Is there a faster way to implement allMatched?
+- What is a practical use of allMatched?
+- Why can't we just use substring() to flip the string?
+**/
+
 /***
  * class LatKtS
  * SKELETON
@@ -15,7 +32,7 @@ public class LatKtS
    **/
   public static String flip( String s )
   {
-    Latkes pancake = new Latkes(10);
+    Latkes pancake = new Latkes(s.length());
     String ans = "";
 
     for (String str : s.split("")) {
@@ -40,28 +57,28 @@ public class LatKtS
    **/
   public static boolean allMatched( String s )
   {
-    Latkes waffle = new Latkes(10);
+    Latkes waffle = new Latkes(s.length());
 
-    for (String p : s.split("")) {
-      if (p.equals("(") || p.equals("[") || p.equals("{")) {
-        waffle.push(p);
+    String[] arr = s.split("");
+
+    for (String str : arr) {
+      if (arr[0].equals(")") || arr[0].equals("}") || arr[0].equals("]")) {
+        return false;
       }
-      else {
-        if (p.equals(")")) {
-          if (!(waffle.peek().equals("(")))
-            return false;
-        }
-        else if (p.equals("]")) {
-          if (!(waffle.peek().equals("[")))
-            return false;
-        }
-        else if (p.equals("]")) {
-          if (!(waffle.peek().equals("{")))
-            return false;
+      else if (str.equals("(") || str.equals("{") || str.equals("[") ) {
+        waffle.push(str);
+      }
+       else {
+        if (str.equals(")") && waffle.peek().equals("(")) {
+          waffle.pop();
+        } else if (str.equals("}") && waffle.peek().equals("{")) {
+          waffle.pop();
+        } else if (str.equals("]") && waffle.peek().equals("[")) {
+          waffle.pop();
         }
       }
     }
-    return true;
+    return (waffle.getStackSize() == 0);
   }
 
 
