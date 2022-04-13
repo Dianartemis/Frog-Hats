@@ -5,17 +5,17 @@ public class Tester{
 
   public static void main(String[] args){
 
-    QQKachoo<String> bob = new LinkedList<String>(); // issues with this line
+    QQKachoo<String> bob = new QQKachoo<String>(); // issues with this line
 
     System.out.println("Should throw an IndexOutOfBoundsException...");
-    bob.addFirst("Pamcake");
+    bob.addFirst("Pancake");
 
     for (int i = 0; i < 6; i++){
      bob.addFirst("null");
     }
 
     System.out.println(bob);
-    bob.addFirst("Pamcake");
+    bob.addFirst("Pancake");
     bob.addFirst("Vanilla Cake");
     bob.addLast("Cheesecake");
     System.out.println(bob);
