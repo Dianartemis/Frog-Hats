@@ -4,14 +4,8 @@
 // 2022-04-27w
 // time spent: 4 hours
 
-import javax.swing.JFrame;
-
-public class SimpleGUIRunner
-{
-	public static void main(String[] args)
-	{
-		JFrame sample = new JFrame();
-		sample.setVisible(true);
-	}
-
+public class HouseDriver{
+  public static void main(String[] args) {
+      Building block = new House(12, 1, "123");
+  }
 }
