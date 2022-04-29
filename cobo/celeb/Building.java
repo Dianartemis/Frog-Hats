@@ -8,13 +8,13 @@ public class Building {
   private int _floors;
   private int _people;
 
-  public Building(int floor, int people ) {
-    _floor = floor;
-    _people = floor;
+  public Building(int floors, int people ) {
+    _floors = floors;
+    _people = people;
   }
 
-  public int getFloor() {
-    return _floor;
+  public int getFloors() {
+    return _floors;
   }
 
   public int getPeople() {
