@@ -46,13 +46,13 @@ Alternate (equivalent, but more succinct?) definitions of "balanced" tree?
 * The heights of all nodes differ by 1 or less.
 
 Is a perfect tree complete?
-* Yes.
+* Yes, because every level is filled in.
 
 Is a complete tree balanced?
-* Yes.
+* Yes, because the heights of the left and right subtrees of any node in a complete tree differ by 1 or less, because every level is filled in, except possibly the last level.
 
 Is the Man Who Is Tall Happy?
-* Not sure
+* Yes, because height is generally viewed as a positive in society, especially concerning males.
 
 What must be true of perfect trees but not others?
 *  All levels must be filled out and it is a tree that is complete and balanced.
