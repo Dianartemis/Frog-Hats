@@ -1,0 +1,22 @@
+Insomniac Raccoons :: Faiza Huda, Tasnim Chowdhury, Diana Akhmedova
+APCS pd8
+HW95 -- Algorithm as Data Structure
+2022-05-09m
+time spent:  hrs
+
+
+DISCO:
+*
+
+
+QCC:
+*
+
+
+With L = level, d = depth, h = height...
+
+  1. a perfect binary tree has L! nodes
+
+  2. at each level, a perfect binary tree has 2h nodes
+
+  3. height of a complete binary tree w/ n nodes is ____
