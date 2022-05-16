@@ -3,8 +3,15 @@ import java.util.*;
 public class ArrayPriorityQueue implements PriorityQueue<Integer> {
   private ArrayList<Integer> diana;
 
+  public ArrayPriorityQueue() {
+    diana = new ArrayList<Integer>();
+  }
+
   public void add(Integer foo) {
-    for (int i = diana.size(); i > 0; i--) {
+    if (diana.isEmpty()){
+      diana.add(foo);
+    }
+    for (int i = diana.size() - 1; i >= 0; i--) {
       if (((Comparable)foo).compareTo(diana.get(i)) > 0) {
         diana.add(i, foo);
         return;
@@ -31,11 +38,11 @@ public class ArrayPriorityQueue implements PriorityQueue<Integer> {
   public String toString() {
     String ret = "";
     if (diana.isEmpty()) {
-      return;
+      return ret;
     }
     else {
       for (Integer i : diana) {
-        ret += i.toString();
+        ret += i.toString() + ", ";
       }
     }
     return ret;

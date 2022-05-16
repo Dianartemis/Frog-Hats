@@ -1,11 +1,12 @@
 Insomniac Raccoons | Faiza Huda, Tasnim Chowdhury, Diana Akhmedova
 APCS pd8
-HW98 -- Some Are More Equal Than Others, Codified
-2022-05-13f
-time spent:  hrs
+HW99 -- Some Are More Equal Than Others, Codified
+2022-05-16m
+time spent: 1 hrs
 
 DISCO:
-*
+* It was very ez to code all of this because we wrote it all out on our plan.
+* It was also mucho ez because most of the heavy lifting came from the prewritten methods for ArrayList.
 
 QCC:
-*
+* I'm assuming the next order of business is to do this but with a Linked List just as we had with a dequeue.
