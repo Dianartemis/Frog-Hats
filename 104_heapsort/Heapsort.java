@@ -79,7 +79,7 @@ public class Heapsort
   private void minHeapify( int[] a )
   {
 
-    for( int i=1; i<a.length; i++ ) {
+    for( int i = 1; i < a.length; i++ ) {
       //add a[i] as leaf
       int addValPos =  //val to add is next non-heap element
 
