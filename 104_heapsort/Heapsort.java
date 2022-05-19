@@ -28,30 +28,39 @@ public class Heapsort
 
     //STEP 2: repeatedly pull from heap until empty
     //(Sorted region will grow from R to L)
-    for( int lastLeaf = ; ;  ) {
+    for( int lastLeaf = data.length - 1; lastLeaf > 0; lastLeaf-- ) {
       //set aside root val
       int tmp = data[0];
 
       //swap last leaf (rightmost on bottom level) into root pos
+      data[0] = lastLeaf;
+      data[lastLeaf] = tmp;
 
       //walk now-out-of-place root node down the tree...
-      int pos =
+      int pos = lastLeaf;
       int minChildPos;
       int maxChildPos;
 
-      while(  ) {
+      while( data[pos] < data[0] ) {
 
         //choose child w/ max value, or check for child
+        if ( data[pos] < data[ (lastLeaf - 1) / 2 ] ) {
+          maxChildPos = data[ (lastLeaf - 1) / 2 ];
+        }
 
         //if no children, then i've walked far enough
         if ( maxChildPos == -1 )
           break;
+
         //if i am greater than my greatest child, i've walked far enough
-        else if (  )
+        else if ( data[pos] > data[maxChildPos] )
           break;
+
         //if i am > least child, swap with that child
         else {
-
+          int temp = data[lastLeaf];
+          data[lastLeaf] = data[maxChildPos];
+          data[maxChildPos] = data[lastLeaf];
         }
       }
 
