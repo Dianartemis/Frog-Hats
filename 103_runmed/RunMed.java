@@ -64,26 +64,5 @@ public class RunMed {
       }
     }
   }
-
-  public static void main(String[] args) {
-    RunMed ffffffffff = new RunMed();
-
-    try {
-      Scanner sc = new Scanner(new File("input.nums"));
-      sc.useDelimiter("\n");
-
-      while (sc.hasNext()) {
-        ffffffffff.add(Integer.parseInt(sc.next()));
-      }
-    }
-    catch (Exception e) {
-      System.out.println(e);
-    }
-    // int[] arr = input.nums.split("\n");
-    // for (String val : arr) {
-    //   ffffffffff.add(Integer.parseInt(val));
-    // }
-    System.out.println(ffffffffff.getMedian());
-
-  }
+  
 } //class
