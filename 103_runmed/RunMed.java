@@ -1,20 +1,19 @@
 /**
 Insomniac Raccoons | Faiza Huda, Tasnim Chowdhury, Diana Akhmedova
 APCS pd8
-HW103: Erica's Friends, Hugo, and The One in the Middle
+HW103 -- Erica's Friends, Hugo, and The One in the Middle
 2022-05-19th
 time spent: 1 hrs
 
-DISCO
-* HeapMin and HeapMax is almost identical
-* We don't know if we needed RunMed.java or RunMed.algo, so we have both
+DISCO:
+* HeapMin and HeapMax are almost identical.
+* We don't know if we needed RunMed.java or RunMed.algo, so we have both.
 
-
-QCC
-* Why are we sorting heap instead of using naive method of quicksort even though they
+QCC:
+* Why are we sorting heap instead of using naive method of QuickSort even though they
 both have O(log(n))?
 
-ALGO
+ALGO:
 use minheap/maxheap combo
 1. if next val < root of maxheap, add to maxheap
   else add to minheap
@@ -24,19 +23,22 @@ use minheap/maxheap combo
     b) heap sizes !equal: med is root of larger heap
 **/
 
+import java.util.*;
+import java.io.*;
+
 public class RunMed {
 
   ALHeapMax lilVals;
   ALHeapMin bigVals;
 
   public RunMed() {
-    lilVals = new ALHeapMax()
+    lilVals = new ALHeapMax();
     bigVals = new ALHeapMin();
   }
 
-  public int getMedian() throws NoSuchElementException() {
+  public int getMedian() throws NoSuchElementException {
     if ( lilVals.size() == bigVals.size() ) {
-      return (lilVals.peekMax() + bigVals.peekMin())/2;
+      return ((lilVals.peekMax() + bigVals.peekMin()) / 2);
     } else {
       if (lilVals.size() > bigVals.size() ) {
         return lilVals.peekMax();
@@ -52,7 +54,7 @@ public class RunMed {
     } else {
       bigVals.add(newVal);
     }
-    if (Math.abs(lilVals.size() , bigVals.size()) > 2 ) {
+    if ((Math.abs(lilVals.size()) > 2) || (Math.abs(bigVals.size()) > 2)) {
       if (lilVals.size() > bigVals.size() ) {
         Integer r = lilVals.removeMax();
         bigVals.add(r);
@@ -65,9 +67,22 @@ public class RunMed {
 
   public static void main(String[] args) {
     RunMed ffffffffff = new RunMed();
-    for (String val : arr) {
-      ffffffffff.add(Integer.parseInt(val));
+
+    try {
+      Scanner sc = new Scanner(new File("input.nums"));
+      sc.useDelimiter("\n");
+
+      while (sc.hasNext()) {
+        ffffffffff.add(Integer.parseInt(sc.next()));
+      }
     }
+    catch (Exception e) {
+      System.out.println(e);
+    }
+    // int[] arr = input.nums.split("\n");
+    // for (String val : arr) {
+    //   ffffffffff.add(Integer.parseInt(val));
+    // }
     System.out.println(ffffffffff.getMedian());
 
   }

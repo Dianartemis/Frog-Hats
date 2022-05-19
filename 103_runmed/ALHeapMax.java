@@ -177,6 +177,11 @@ public class ALHeapMax
   }//O(1)
 
 
+  public int size() {
+    return _heap.size();
+  }//O(1)
+
+
   //~~~~~~~~~~~~~ aux helper fxns ~~~~~~~~~~~~~~
   private Integer maxOf( Integer a, Integer b )
   {

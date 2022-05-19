@@ -177,6 +177,11 @@ public class ALHeapMin
   }//O(1)
 
 
+  public int size() {
+    return _heap.size();
+  }//O(1)
+  
+
   //~~~~~~~~~~~~~ aux helper fxns ~~~~~~~~~~~~~~
   private Integer minOf( Integer a, Integer b )
   {
