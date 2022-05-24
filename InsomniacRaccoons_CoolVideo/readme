@@ -1,0 +1,16 @@
+Insomniac Raccoons (Faiza Huda, Tasnim Chowdhury, Diana Akhmedova)
+APCS pd08
+HW105 -- 'Tis Hard to Search for 'Processing'
+2022-05-24t
+time spent: 1 hr
+
+WHAT THIS DEMO SHOWS:
+* It shows a way to process a gif by frame and also includes music.
+* This gif/animation is 10 frames per second, but you may change the FPS to
+  create a faster or slower animation.
+
+WHY YOU CARE:
+* This should be particularly helpful if you are trying to make a game with
+  background music or need an animation for an avatar's walk.
+* This can also be a model for uploading images, either for backgrounds
+  or for characters or objects in the foreground.
